@@ -1,0 +1,30 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\source\\digimonvenomnxteditor\\private\\tests\\digimonvenomnxtnativecontenttests.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\digimonvenomnxteditor\\definitions.digimonvenomnxteditor.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\source\\digimonvenomnxteditor\\public\\digimonvenomnxteditorlibrary.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\intermediate\\build\\win64\\unrealeditor\\inc\\digimonvenomnxteditor\\uht\\digimonvenomnxteditorlibrary.generated.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\public\\digimonvenomnxttamers.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\public\\digimonvenomnxtanimationassets.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\public\\digimonvenomnxttypes.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\intermediate\\build\\win64\\unrealeditor\\inc\\digimonvenomnxtruntime\\uht\\digimonvenomnxttypes.generated.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\intermediate\\build\\win64\\unrealeditor\\inc\\digimonvenomnxtruntime\\uht\\digimonvenomnxtanimationassets.generated.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\public\\digimonvenomnxtmapassetrevision.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\intermediate\\build\\win64\\unrealeditor\\inc\\digimonvenomnxtruntime\\uht\\digimonvenomnxtmapassetrevision.generated.h",
+            "c:\\program files\\epic games\\ue_5.8\\engine\\plugins\\2d\\paper2d\\source\\paper2d\\classes\\paperflipbook.h",
+            "c:\\program files\\epic games\\ue_5.8\\engine\\plugins\\2d\\paper2d\\intermediate\\build\\win64\\unrealeditor\\inc\\paper2d\\uht\\paperflipbook.generated.h",
+            "c:\\program files\\epic games\\ue_5.8\\engine\\plugins\\2d\\paper2d\\source\\paper2d\\classes\\papersprite.h",
+            "c:\\program files\\epic games\\ue_5.8\\engine\\plugins\\2d\\paper2d\\source\\paper2d\\classes\\spriteeditoronlytypes.h",
+            "c:\\program files\\epic games\\ue_5.8\\engine\\plugins\\2d\\paper2d\\intermediate\\build\\win64\\unrealeditor\\inc\\paper2d\\uht\\spriteeditoronlytypes.generated.h",
+            "c:\\program files\\epic games\\ue_5.8\\engine\\source\\runtime\\engine\\public\\slate\\slatetextureatlasinterface.h",
+            "c:\\program files\\epic games\\ue_5.8\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\slatetextureatlasinterface.generated.h",
+            "c:\\program files\\epic games\\ue_5.8\\engine\\plugins\\2d\\paper2d\\intermediate\\build\\win64\\unrealeditor\\inc\\paper2d\\uht\\papersprite.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

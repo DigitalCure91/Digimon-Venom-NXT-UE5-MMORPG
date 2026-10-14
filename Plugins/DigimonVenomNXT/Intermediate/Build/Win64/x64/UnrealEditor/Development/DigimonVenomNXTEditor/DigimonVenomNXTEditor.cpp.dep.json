@@ -1,0 +1,26 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\source\\digimonvenomnxteditor\\private\\digimonvenomnxteditor.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\digimonvenomnxteditor\\definitions.digimonvenomnxteditor.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\source\\digimonvenomnxteditor\\public\\digimonvenomnxteditor.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\source\\digimonvenomnxteditor\\public\\digimonvenomnxteditorlibrary.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\intermediate\\build\\win64\\unrealeditor\\inc\\digimonvenomnxteditor\\uht\\digimonvenomnxteditorlibrary.generated.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\source\\digimonvenomnxteditor\\private\\digimonvenomnxteditormappreview.h",
+            "c:\\program files\\epic games\\ue_5.8\\engine\\source\\editor\\unrealed\\public\\filehelpers.h",
+            "c:\\program files\\epic games\\ue_5.8\\engine\\source\\editor\\unrealed\\public\\packagetools.h",
+            "c:\\program files\\epic games\\ue_5.8\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\packagetools.generated.h",
+            "c:\\program files\\epic games\\ue_5.8\\engine\\source\\developer\\sourcecontrol\\public\\isourcecontrolprovider.h",
+            "c:\\program files\\epic games\\ue_5.8\\engine\\source\\developer\\sourcecontrol\\public\\isourcecontrolchangelist.h",
+            "c:\\program files\\epic games\\ue_5.8\\engine\\source\\developer\\sourcecontrol\\public\\isourcecontrolchangeliststate.h",
+            "c:\\program files\\epic games\\ue_5.8\\engine\\source\\developer\\sourcecontrol\\public\\isourcecontroloperation.h",
+            "c:\\program files\\epic games\\ue_5.8\\engine\\source\\developer\\sourcecontrol\\public\\sourcecontrolresultinfo.h",
+            "c:\\program files\\epic games\\ue_5.8\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\filehelpers.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

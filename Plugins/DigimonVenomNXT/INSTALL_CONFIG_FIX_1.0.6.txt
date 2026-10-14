@@ -1,0 +1,29 @@
+DIGIMON VENOM NXT - IMPORT CONFIGURATION FIX 1.0.6
+
+The submitted Windows log successfully compiled the Editor target and ran the
+import commandlet. MainMenu and PublicWorld were saved with all 500 map zones.
+Setup then stopped while persisting r.CustomDepth=3 to DefaultEngine.ini,
+before artwork import, the Game-target build or cooking began.
+
+1. Save and close Unreal Editor.
+2. Extract this cumulative update into C:\DigimonVenomNXT\Plugins\, replacing
+   matching files in the existing DigimonVenomNXT folder, including the .uplugin.
+   Keep the existing Resources, Content and Saved folders.
+3. Double-click DigimonVenomNXT\Tools\Build_Windows.cmd.
+
+The importer now updates the renderer property directly in project defaults
+and verifies the saved value from disk. It no longer tries to persist that
+source-file change through GConfig->Flush. Other renderer keys and sections
+are preserved. Genuine write/verification failures still stop setup with the
+affected path; failure is not hidden or treated as a completed content import.
+
+Build_Windows.cmd rebuilds the Editor target, imports/resumes content, validates
+the saved worlds, builds the native Game target, then cooks and packages. This
+update includes all earlier compile, world, launcher, credentials and commandlet
+fixes. You do not need to delete imported content, account saves or settings.
+
+See Docs/config_verification_1.0.6.json for checks and their limits. Portable
+regression checks cannot establish a completed Unreal Windows package: UE5.8
+and the Windows compiler are unavailable in the repair environment. The supplied
+log establishes the previous Editor-build and world-save results, not completion
+of this corrected import, cook or package.

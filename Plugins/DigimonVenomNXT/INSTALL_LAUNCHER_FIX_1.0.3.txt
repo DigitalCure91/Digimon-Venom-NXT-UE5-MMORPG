@@ -1,0 +1,27 @@
+DIGIMON VENOM NXT - WINDOWS LAUNCHER FIX 1.0.3
+
+Close Unreal Editor. Extract this update over your existing DigimonVenomNXT
+plugin folder, replacing matching files. Keep Resources, Content and Saved.
+This is a cumulative source/tools update; the original asset bundle is required.
+
+Double-click Tools\Build_Windows.cmd.
+With no arguments it compiles, imports/resumes content, validates startup,
+and packages the Windows game. The window stays open after success or failure.
+
+If Unreal is installed somewhere the project/registry cannot resolve, open CMD
+in Tools and run (substitute your actual engine folder):
+
+Build_Windows.cmd -EngineRoot "C:\Program Files\Epic Games\UE_5.8" -ImportContent
+
+The console displays a saved log path, normally Tools\Logs\Windows-*.log.
+If packaging stops, provide the newest log. A failure is not a successful build.
+Missing PowerShell or a damaged launcher itself remains visible in the console,
+but may happen before a log can be opened.
+
+Build_Windows.bat is the same game build. Build_UE58.bat builds only the plugin.
+For automation, set DIGIMONVENOMNXT_NO_PAUSE=1 to disable the final pause.
+
+This fix changes launch/diagnostic behavior, not gameplay or imported assets.
+Portable launcher contracts pass. Windows process fixtures are included but
+cannot run in the Linux development environment; an actual UE build is still
+required on your Windows machine.

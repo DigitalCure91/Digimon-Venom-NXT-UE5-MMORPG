@@ -1,0 +1,18 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.DigimonVenomNXTEditor.cpp.obj": [
+			"DigimonVenomNXTEditor.init.gen.cpp.obj",
+			"DigimonVenomNXTEditorLibrary.gen.cpp.obj",
+			"DigimonVenomNXTImportCommandlet.gen.cpp.obj",
+			"PerModuleInline.gen.cpp.obj",
+			"DigimonVenomNXTEditor.cpp.obj",
+			"DigimonVenomNXTEditorCustomDepth.cpp.obj",
+			"DigimonVenomNXTEditorLibrary.cpp.obj",
+			"DigimonVenomNXTEditorMapPreview.cpp.obj",
+			"DigimonVenomNXTImportCommandlet.cpp.obj",
+			"DigimonVenomNXTCustomDepthTests.cpp.obj",
+			"DigimonVenomNXTNativeContentTests.cpp.obj"
+		]
+	}
+}

@@ -1,0 +1,48 @@
+DigimonVenomNXT 1.0.1 — UE 5.8 compile-fix update
+
+This ZIP updates the previously supplied 1.0.0 plugin. It contains the complete
+Source, Tools, Config and documentation folders, plus the plugin descriptor.
+Keep the existing Resources and Content folders: the large asset files are
+unchanged and are intentionally not repeated in this update.
+
+INSTALL
+1. Close Unreal Editor and any running build of this project.
+2. Extract this ZIP into your project's Plugins folder. Merge its
+   DigimonVenomNXT folder with the existing DigimonVenomNXT folder and replace
+   files when prompted. Do not create a second nested DigimonVenomNXT folder.
+3. Rebuild the project's Development Editor / Win64 target.
+
+For the complete external build, import and packaging workflow, open CMD:
+
+  cd /d "<Project>\Plugins\DigimonVenomNXT\Tools"
+  Build_Windows.bat -EngineRoot "C:\Program Files\Epic Games\UE_5.8" -ImportContent
+
+Use your actual project and engine paths. If the existing content import already
+completed successfully for this same asset set, omit -ImportContent.
+The helper cleans native build products before rebuilding. Keep Saved, existing
+profiles, Resources and Content; none requires deletion to apply this update.
+
+WHAT WAS FIXED
+- Removed references to profile members absent from the native Digimon schema,
+  including the unused legacy migration API. Updated campaign automation cases
+  to the native campaign IDs, saved achievements and separate mastery rewards.
+- Included the Settings definition directly in the data subsystem, fixing the
+  shop pricing and currency conversion compilation failures.
+- Corrected the server-local hosting config read: UE 5.8 FConfigFile::Read
+  returns void. Password precedence remains environment, local file, settings.
+- Split generated campaign construction into bounded, non-inlined helpers.
+  This addresses MSVC C4883 without suppressing diagnostics or disabling
+  optimization. All 67 maps, 293 NPCs, 2,068 dialogue branches and data order
+  are preserved.
+
+VALIDATION
+All 65 portable suites pass. The actual five campaign source files also pass
+the state-machine harness with current profile declarations at O0 and O2.
+The included report documents negative controls and source/content checks.
+
+The supplied Windows UE 5.8.3 log passed UnrealHeaderTool and identified the
+four causes above. This update has not been rebuilt with Unreal/MSVC here;
+Unreal Engine and Windows are unavailable in the preparation environment.
+The Windows rebuild, import/cook and runtime acceptance checks remain required.
+
+See Docs/VALIDATION.md and Docs/portable_test_results.json for the evidence.

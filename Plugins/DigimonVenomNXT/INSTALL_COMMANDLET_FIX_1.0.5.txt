@@ -1,0 +1,27 @@
+DIGIMON VENOM NXT - COMMANDLET STARTUP FIX 1.0.5
+
+The submitted log successfully compiled and linked the Editor target, then
+Unreal could not find DigimonVenomNXTImportCommandlet. The Editor module loaded
+too late for commandlet class discovery.
+
+1. Close Unreal Editor.
+2. Extract this update into C:\DigimonVenomNXT\Plugins\, replacing matching
+   files in the existing DigimonVenomNXT folder. Keep Resources, Content and Saved.
+3. IMPORTANT: replace DigimonVenomNXT.uplugin too, not just Source/Tools.
+4. Double-click DigimonVenomNXT\Tools\Build_Windows.cmd again.
+
+The corrected descriptor loads DigimonVenomNXTEditor at Default. It remains an
+Editor-only module. Interactive menus/previews start only after engine init and
+never initialize for import/cook/validation commandlets. Startup validation in
+both build helpers catches the old descriptor before another lengthy compile.
+
+The command rebuilds the native Editor target and imports/resumes content before
+building/cooking the Windows game. It includes all previous compile, world,
+launcher and hosting-password fixes. No need to remove generated Content or
+your saved accounts/settings.
+
+Validation: 58 actual PowerShell build-helper fixtures, 8 compiled C++ lifecycle
+scenarios, existing world-entry/setup tests and 21 source/content checks pass.
+The supplied log confirms the previous Editor build succeeded. The corrected
+Unreal import/cook cannot be executed in this Linux environment and still needs
+the Windows build to finish; these checks are not a completed game package.

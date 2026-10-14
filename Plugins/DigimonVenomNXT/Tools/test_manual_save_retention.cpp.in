@@ -1,0 +1,182 @@
+// Portable test doubles for the production retention methods, not Unreal networking or JSON.
+#include <algorithm>
+#include <cstdint>
+#include <iostream>
+#include <map>
+#include <set>
+#include <stdexcept>
+#include <string>
+#include <utility>
+#include <vector>
+#include "DigimonVenomNXTScanCore.h"
+#define WITH_DEV_AUTOMATION_TESTS 0
+#define TEXT(x) x
+using TCHAR = char;
+using int32 = std::int32_t;
+using int64 = std::int64_t;
+struct FString : std::string {
+    using std::string::string;
+    FString() = default;
+    FString(const std::string& v) : std::string(v) {}
+    bool IsEmpty() const { return empty(); }
+    void Reset() { clear(); }
+    const char* operator*() const { return c_str(); }
+    static FString FromInt(int i) { return std::to_string(i); }
+};
+template<class T> struct TArray : std::vector<T> {
+    using std::vector<T>::vector;
+    int Num() const { return static_cast<int>(this->size()); }
+    bool IsEmpty() const { return this->empty(); }
+    void Add(const T& v) { this->push_back(v); }
+    bool Contains(const T& v) const { return std::find(this->begin(),this->end(),v)!=this->end(); }
+};
+template<class K,class V> struct TMap {
+    std::map<K,V> data;
+    void Add(const K& k,const V& v) { data[k]=v; }
+    V* Find(const K& k) { auto i=data.find(k);return i==data.end()?nullptr:&i->second; }
+    const V* Find(const K& k) const { auto i=data.find(k);return i==data.end()?nullptr:&i->second; }
+};
+template<class T> struct TSet {
+    std::set<T> data;
+    void Add(const T& v) { data.insert(v); }
+    bool Contains(const T& v) const { return data.count(v)!=0; }
+};
+template<class T> T&& MoveTemp(T& t) { return std::move(t); }
+struct FDigimonSeasonArchive { FString CareerId; int Week=0; };
+struct FDigimonInventoryEntry { FString ItemId; int Quantity=0; };
+struct FDigimonScanRecord { int Percent=0,FractionalHundredths=0,PeakPercent=0,Materializations=0; bool bEverOwned=false; };
+struct FDigimonPlayerProfile {
+    FString AccountId,Username;
+    TArray<int> Collection,Party;
+    int64 CommerceRevision=0,DigiLabRecoveryRevision=0,Credits=0,LastSavedUnix=0;
+    char Grade='E';
+    struct Career { FString CareerId; int Week=1; TArray<FDigimonSeasonArchive> Archive; } Season;
+    struct Home { bool bInside=false; } Farm;
+    TArray<FDigimonInventoryEntry> Inventory;
+    TArray<FDigimonScanRecord> Scans;
+    struct Metadata { bool CompareScriptStruct(const FDigimonPlayerProfile*,const FDigimonPlayerProfile*,int) const { return true; } };
+    static const Metadata* StaticStruct() { static Metadata m;return &m; }
+};
+int Serializations=0,FileWrites=0,ArchiveWrites=0,StorageErrors=0;
+std::map<FString,FString> Files;
+std::map<FString,FDigimonPlayerProfile> Encoded;
+struct FJsonObjectConverter {
+    static bool UStructToJsonObjectString(const FDigimonPlayerProfile& p,FString& out) {
+        out=FString("json_")+FString::FromInt(++Serializations);Encoded[out]=p;return true;
+    }
+    static bool JsonObjectStringToUStruct(const FString& json,FDigimonPlayerProfile* p,int,int) {
+        auto i=Encoded.find(json);if(i==Encoded.end())return false;*p=i->second;return true;
+    }
+};
+struct FFileHelper {
+    enum class EEncodingOptions { ForceUTF8WithoutBOM };
+    static bool LoadFileToString(FString& out,const char* path) { auto i=Files.find(path);if(i==Files.end())return false;out=i->second;return true; }
+    static bool SaveStringToFile(const FString& json,const char* path,EEncodingOptions) { ++FileWrites;Files[path]=json;return true; }
+};
+struct IFileManager {
+    static IFileManager& Get(){ static IFileManager m;return m; }
+    bool FileExists(const char* p) const { return Files.count(p)!=0; }
+    bool MakeDirectory(const char*,bool){ ++FileWrites;return true; }
+};
+namespace FPaths { FString GetPath(const FString&) { return "profiles"; } }
+namespace DigimonVenomNXTAtomicFile { bool ReplaceFromTemporary(const FString& path,const FString& tmp){ ++FileWrites;Files[path]=Files.at(tmp);Files.erase(tmp);return true; } }
+struct FDateTime { static FDateTime UtcNow(){ return {}; } int64 ToUnixTimestamp() const { return 1000; } };
+struct UDigimonVenomNXTSettings { bool bEnableGlobalAutosaves=false; int ScanCapPercent=200; } Settings;
+template<class T> const T* GetDefault(){return &Settings;}
+constexpr int NM_Client=1;
+struct UWorld { int Mode=0; int GetNetMode() const{return Mode;} };
+struct UDigimonVenomNXTDataSubsystem {};
+struct UGameInstance { template<class T> T* GetSubsystem() const{return nullptr;} };
+struct FScopeLock { explicit FScopeLock(int*) {} };
+int ProfilePersistenceMutex=0;
+namespace DigimonVenomNXTProfileValidation {
+    bool HasRequiredJsonFields(const FString& json) { return Encoded.count(json)!=0; }
+    bool Validate(const FDigimonPlayerProfile& p,const FString& id,FString& error) {
+        if(id.IsEmpty()||p.AccountId!=id||p.Username.IsEmpty()){error="identity";return false;}
+        std::set<int> seen;
+        for(int member:p.Party) if(!p.Collection.Contains(member)||!seen.insert(member).second){error="party";return false;}
+        return true;
+    }
+}
+namespace DigimonVenomNXTCampaign { bool Reconcile(FDigimonPlayerProfile&) {return false;} }
+namespace DigimonVenomNXTSeason { bool ReconcileTamerStyles(FDigimonPlayerProfile&) {return false;} }
+struct UDigimonVenomNXTProfileSubsystem {
+    TMap<FString,FDigimonPlayerProfile> SessionProfiles;
+    TMap<FString,FDigimonSeasonArchive> DeferredSeasonRecords;
+    TSet<FString> DirtySessionProfiles;
+    UWorld* World=nullptr;
+    UWorld* GetWorld() const { return World; }
+    UGameInstance* GetGameInstance() const {return nullptr;}
+    FString ProfilePath(const FString& id) const {return "profiles/"+id+".json";}
+    bool RecoverCommerceLocked() {return true;}
+    bool FlushDeferredLocked(FString&) {return true;} // Disk checkpoint itself is covered by native UE tests.
+    bool WriteSeasonArchive(const FDigimonPlayerProfile&) {++ArchiveWrites;return true;}
+    static bool ReconcileCombatBalance(FDigimonPlayerProfile&,const UDigimonVenomNXTDataSubsystem*){return false;}
+    bool AutomaticSavingEnabled() const;
+    void RetainProfileLocked(const FDigimonPlayerProfile&);
+    bool RetainProfile(const FDigimonPlayerProfile&);
+    bool CheckCommerceFenceLocked(const FDigimonPlayerProfile&,bool) const;
+    bool SaveProfile(const FDigimonPlayerProfile&);
+    bool LoadProfile(const FString&,const FString&,FDigimonPlayerProfile&);
+};
+void ReportProfileStorageFailure(UDigimonVenomNXTProfileSubsystem*,const FString&,const TCHAR*){++StorageErrors;}
+// PRODUCTION_METHODS
+
+int Checks=0;
+void Check(bool ok,const char* msg){++Checks;if(!ok)throw std::runtime_error(msg);}
+FDigimonPlayerProfile Fixture(const FString& id) {
+    FDigimonPlayerProfile p;p.AccountId=id;p.Username="Synthetic tamer";
+    p.Collection={1,2,3,4,5,6};p.Party={6,5,4,3,2,1};p.Grade='A';p.Credits=987654;
+    p.Season.CareerId="career_"+id;p.Season.Week=19;
+    for(int i=15;i<19;++i)p.Season.Archive.Add({p.Season.CareerId,i});
+    return p;
+}
+int main(){try {
+    UDigimonVenomNXTProfileSubsystem store;
+    Check(!store.AutomaticSavingEnabled(),"autosaving must default off");
+    for(int i=0;i<100;++i){
+        auto p=Fixture("account_"+FString::FromInt(i));
+        Check(store.SaveProfile(p),"accept manual-mode checkpoint in memory");
+        p.Credits+=i;p.Grade=i%2?'A':'B';p.Season.Week+=1;
+        Check(store.RetainProfile(p),"ordinary logout retains authoritative values");
+        FDigimonPlayerProfile rejoined;
+        Check(store.LoadProfile(p.AccountId,p.Username,rejoined),"same-server rejoin must find memory account");
+        Check(rejoined.Party==p.Party && rejoined.Collection==p.Collection,"six partners must survive rejoin");
+        Check(rejoined.Credits==p.Credits&&rejoined.Grade==p.Grade&&rejoined.Season.Week==p.Season.Week,"all progress must survive rejoin");
+        p.Party.clear();p.Credits=0; // The retained value must not alias a destroyed session.
+        FDigimonPlayerProfile again;
+        Check(store.LoadProfile(rejoined.AccountId,rejoined.Username,again),"repeat same-server rejoin");
+        Check(again.Party.size()==6&&again.Credits==rejoined.Credits,"destroying old session cannot mutate retained account");
+    }
+    Check(store.DirtySessionProfiles.data.size()==100,"admin checkpoint must include all disconnected accounts");
+    Check(Serializations==0&&FileWrites==0&&ArchiveWrites==0,"manual mode must not serialize or write on gameplay/logout");
+    auto p=Fixture("account_0");p.CommerceRevision=1;
+    store.RetainProfileLocked(p); // emulate an accepted all-participant commerce commit
+    auto stale=p;stale.CommerceRevision=0;
+    Check(!store.RetainProfile(stale),"stale logout may not overwrite newer commerce");
+    Check(!store.SaveProfile(stale),"stale save may not overwrite newer commerce");
+    auto invalid=p;invalid.Party.push_back(99);
+    Check(!store.RetainProfile(invalid),"missing partner reference must not replace retained account");
+    UWorld client;client.Mode=NM_Client;store.World=&client;
+    Check(!store.RetainProfile(p),"clients cannot write authoritative session cache");
+    store.World=nullptr;
+    Settings.bEnableGlobalAutosaves=true;
+    const int writes=FileWrites,serial=Serializations;
+    Check(store.RetainProfile(p),"ordinary logout still retains when autosaving is enabled");
+    Check(FileWrites==writes&&Serializations==serial,"ordinary logout must never request a disk checkpoint");
+    UDigimonVenomNXTProfileSubsystem autoStore;
+    Check(autoStore.SaveProfile(Fixture("auto_account")),"opt-in automatic saving still works");
+    Check(FileWrites>writes&&Serializations>serial,"enabled saving must actually reach writer");
+    Settings.bEnableGlobalAutosaves=false;
+    auto legacyScan=Fixture("scan_account");legacyScan.Scans.Add({200,90,199,-2,false});
+    Encoded["legacy_scan_fixture"]=legacyScan;Files["profiles/scan_account.json"]="legacy_scan_fixture";
+    UDigimonVenomNXTProfileSubsystem scanStore;
+    FDigimonPlayerProfile migrated;
+    const int beforeMigrationWrites=FileWrites;
+    Check(scanStore.LoadProfile(legacyScan.AccountId,legacyScan.Username,migrated),"load retained fractional scan migration");
+    Check(migrated.Scans[0].Percent==200&&migrated.Scans[0].FractionalHundredths==0&&migrated.Scans[0].PeakPercent==200&&migrated.Scans[0].Materializations==0,"normalize capped scan fraction with production scan core");
+    Check(scanStore.DirtySessionProfiles.Contains(legacyScan.AccountId),"scan migration stays queued for explicit checkpoint");
+    Check(FileWrites==beforeMigrationWrites,"scan migration obeys manual persistence policy");
+    std::cout<<Checks<<" production-method retention checks passed (portable UE doubles; not Unreal I/O/networking).\n";
+    return 0;
+}catch(const std::exception& e){std::cerr<<e.what()<<"\n";return 1;}}

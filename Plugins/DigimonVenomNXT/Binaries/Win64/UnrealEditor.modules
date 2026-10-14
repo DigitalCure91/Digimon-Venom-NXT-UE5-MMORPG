@@ -1,0 +1,8 @@
+{
+	"BuildId": "55116800",
+	"Modules": 
+	{
+		"DigimonVenomNXTEditor": "UnrealEditor-DigimonVenomNXTEditor.dll",
+		"DigimonVenomNXTRuntime": "UnrealEditor-DigimonVenomNXTRuntime.dll"
+	}
+}

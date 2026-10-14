@@ -1,0 +1,31 @@
+DIGIMON VENOM NXT - BUILD PREPARATION FIX 1.0.4
+
+Your submitted log stopped because the password entered through Project Settings
+was present in DefaultGame.ini. This update handles the normal setup automatically.
+
+1. Close Unreal Editor.
+2. Extract this update over the existing Plugins\DigimonVenomNXT folder,
+   replacing matching files. Keep Resources, Content and Saved.
+3. Double-click Tools\Build_Windows.cmd.
+
+The build preserves the configured hosting password in the existing supported
+Saved\DigimonVenomNXT\Host.ini, verifies that copy, clears the distributable
+password entry, and continues. It does not print the password. Differing existing
+local/source credentials are preserved and reported before changes.
+
+After a successful package, the console prints the game folder and this private
+host launcher: <Project>\Saved\DigimonVenomNXT\PlayPackagedHost.cmd.
+Use it on your build machine to open the packaged game's normal main menu,
+log in, select Host and enter the same hosting password. Players joining you
+can open the packaged game executable normally.
+
+No credential or private host launcher is added to the distributed game archive.
+Build output remains in Tools\Logs (or the temporary fallback printed on screen).
+The window stays open on success or failure.
+
+This cumulative update includes all earlier compile, startup/world and launcher
+corrections. The original Resources/asset bundle remains required.
+
+Actual PowerShell filesystem/build-helper fixtures and the full shipped-source
+preflight were run in Linux. This environment has no Windows Unreal installation;
+the Windows C++ build, import, cook and live game still require verification there.

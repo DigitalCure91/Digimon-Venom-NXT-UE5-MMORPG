@@ -1,0 +1,19 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/experimental:deterministic
+/DEF
+/NAME:"UnrealEditor-DigimonVenomNXTEditor.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:/Users/Leen/Documents/Unreal Projects/DigimonVenomNXT/Intermediate/Build/Win64/x64/UnrealEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.h.obj"
+"C:/Users/Leen/Documents/Unreal Projects/DigimonVenomNXT/Plugins/DigimonVenomNXT/Intermediate/Build/Win64/x64/UnrealEditor/Development/DigimonVenomNXTEditor/Module.DigimonVenomNXTEditor.cpp.obj"
+"C:/Users/Leen/Documents/Unreal Projects/DigimonVenomNXT/Plugins/DigimonVenomNXT/Intermediate/Build/Win64/x64/UnrealEditor/Development/DigimonVenomNXTEditor/DigimonVenomNXTEditor.cpp.obj"
+"C:/Users/Leen/Documents/Unreal Projects/DigimonVenomNXT/Plugins/DigimonVenomNXT/Intermediate/Build/Win64/x64/UnrealEditor/Development/DigimonVenomNXTEditor/DigimonVenomNXTEditorCustomDepth.cpp.obj"
+"C:/Users/Leen/Documents/Unreal Projects/DigimonVenomNXT/Plugins/DigimonVenomNXT/Intermediate/Build/Win64/x64/UnrealEditor/Development/DigimonVenomNXTEditor/DigimonVenomNXTEditorLibrary.cpp.obj"
+"C:/Users/Leen/Documents/Unreal Projects/DigimonVenomNXT/Plugins/DigimonVenomNXT/Intermediate/Build/Win64/x64/UnrealEditor/Development/DigimonVenomNXTEditor/DigimonVenomNXTEditorMapPreview.cpp.obj"
+"C:/Users/Leen/Documents/Unreal Projects/DigimonVenomNXT/Plugins/DigimonVenomNXT/Intermediate/Build/Win64/x64/UnrealEditor/Development/DigimonVenomNXTEditor/DigimonVenomNXTImportCommandlet.cpp.obj"
+"C:/Users/Leen/Documents/Unreal Projects/DigimonVenomNXT/Plugins/DigimonVenomNXT/Intermediate/Build/Win64/x64/UnrealEditor/Development/DigimonVenomNXTEditor/DigimonVenomNXTCustomDepthTests.cpp.obj"
+"C:/Users/Leen/Documents/Unreal Projects/DigimonVenomNXT/Plugins/DigimonVenomNXT/Intermediate/Build/Win64/x64/UnrealEditor/Development/DigimonVenomNXTEditor/DigimonVenomNXTNativeContentTests.cpp.obj"
+/OUT:"C:/Users/Leen/Documents/Unreal Projects/DigimonVenomNXT/Plugins/DigimonVenomNXT/Intermediate/Build/Win64/x64/UnrealEditor/Development/DigimonVenomNXTEditor/UnrealEditor-DigimonVenomNXTEditor.lib"

@@ -1,0 +1,664 @@
+{
+  "schemaVersion": 1,
+  "total": 69,
+  "passed": 69,
+  "failed": 0,
+  "unrealBuildExecuted": false,
+  "suites": [
+    {
+      "name": "test_atomic_file_integration.py",
+      "exitCode": 0,
+      "seconds": 0.5,
+      "log": "test_atomic_file_integration.py.log",
+      "output": "Actual POSIX atomic replacement: 19 real-file integrity checks passed.\n.\n----------------------------------------------------------------------\nRan 1 test in 0.455s\n\nOK\n"
+    },
+    {
+      "name": "test_audio_cue_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.62,
+      "log": "test_audio_cue_core.cpp.log",
+      "output": "6085 audio cue policy checks passed\n"
+    },
+    {
+      "name": "test_audio_routing_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.43,
+      "log": "test_audio_routing_core.cpp.log",
+      "output": "Audio routing core: 121 checks passed\n"
+    },
+    {
+      "name": "test_battle_damage_adapter.py",
+      "exitCode": 0,
+      "seconds": 0.58,
+      "log": "test_battle_damage_adapter.py.log",
+      "output": "Actual runtime adapter: physical/INT, affinities, Guard, CAM, PvE and mode parity passed\n.\n----------------------------------------------------------------------\nRan 1 test in 0.527s\n\nOK\n"
+    },
+    {
+      "name": "test_battle_policy_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.32,
+      "log": "test_battle_policy_core.cpp.log",
+      "output": "Battle policy: 423 checks passed\n"
+    },
+    {
+      "name": "test_battle_presentation_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.78,
+      "log": "test_battle_presentation_core.cpp.log",
+      "output": "PASS: 45 battle-presentation checks; complete traces, terminal strikes, SP/HP replay, reserves and bounded draws.\n"
+    },
+    {
+      "name": "test_campaign_battle_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.31,
+      "log": "test_campaign_battle_core.cpp.log",
+      "output": "Campaign battle policy: 133 checks passed\n"
+    },
+    {
+      "name": "test_campaign_client_readiness.py",
+      "exitCode": 0,
+      "seconds": 0.76,
+      "log": "test_campaign_client_readiness.py.log",
+      "output": "24 arrival orders, late-state retry, input gate, host, stale/duplicate sessions and content-failure/menu separation passed\n...\n----------------------------------------------------------------------\nRan 3 tests in 0.721s\n\nOK\n"
+    },
+    {
+      "name": "test_campaign_codegen.py",
+      "exitCode": 0,
+      "seconds": 0.13,
+      "log": "test_campaign_codegen.py.log",
+      "output": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.066s\n\nOK\n"
+    },
+    {
+      "name": "test_campaign_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.35,
+      "log": "test_campaign_core.cpp.log",
+      "output": "campaign core: 419 checks passed\n"
+    },
+    {
+      "name": "test_campaign_placement_cache.py",
+      "exitCode": 0,
+      "seconds": 1.37,
+      "log": "test_campaign_placement_cache.py.log",
+      "output": "Five placement failures, rollback retry, successful commit, preflight, champion stage and campaign identity checks passed\n..\n----------------------------------------------------------------------\nRan 2 tests in 1.323s\n\nOK\n"
+    },
+    {
+      "name": "test_chronicles_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.28,
+      "log": "test_chronicles_core.cpp.log",
+      "output": "PASS Chronicles ordered routes, all17 unique crest+guardian gate, explicit quest turn-in, isolated20 percent mastery rules\n"
+    },
+    {
+      "name": "test_collision_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.53,
+      "log": "test_collision_core.cpp.log",
+      "output": "Exact image collision: 15947 checks passed\n"
+    },
+    {
+      "name": "test_combat_adapter.py",
+      "exitCode": 0,
+      "seconds": 3.59,
+      "log": "test_combat_adapter.py.log",
+      "output": "PASS actual combat adapter: 108457 checks (portable UE stand-ins; not an Unreal build)\n"
+    },
+    {
+      "name": "test_combat_balance_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.75,
+      "log": "test_combat_balance_core.cpp.log",
+      "output": "PASS: 818 production combat balance, matchup, migration, ABI, training and AI checks.\n"
+    },
+    {
+      "name": "test_combat_migration_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.38,
+      "log": "test_combat_migration_core.cpp.log",
+      "output": "Combat migration traversal: 16 checks passed\n"
+    },
+    {
+      "name": "test_community_compile.py",
+      "exitCode": 0,
+      "seconds": 0.65,
+      "log": "test_community_compile.py.log",
+      "output": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.600s\n\nOK\n"
+    },
+    {
+      "name": "test_community_integration.py",
+      "exitCode": 0,
+      "seconds": 0.98,
+      "log": "test_community_integration.py.log",
+      "output": "Actual unranked authority methods: 50 consent, ignore, ownership, replay and race checks passed.\n.......\n----------------------------------------------------------------------\nRan 7 tests in 0.938s\n\nOK\n"
+    },
+    {
+      "name": "test_compile_surface.py",
+      "exitCode": 0,
+      "seconds": 0.1,
+      "log": "test_compile_surface.py.log",
+      "output": "..................................\n----------------------------------------------------------------------\nRan 34 tests in 0.052s\n\nOK\n"
+    },
+    {
+      "name": "test_digicare_healing_adapter.py",
+      "exitCode": 0,
+      "seconds": 2.06,
+      "log": "test_digicare_healing_adapter.py.log",
+      "output": "Actual DigiLab, shop, capsule, ABI and exchange adapters: 392 transaction, authority, receipt, persistence, economy and replay checks passed\n.\n----------------------------------------------------------------------\nRan 1 test in 1.988s\n\nOK\n"
+    },
+    {
+      "name": "test_editor_setup_flow.py",
+      "exitCode": 0,
+      "seconds": 1.24,
+      "log": "test_editor_setup_flow.py.log",
+      "output": "...\n----------------------------------------------------------------------\nRan 3 tests in 1.233s\n\nOK\n42 production setup paths passed: all aliases, resume/replace, early worlds, each failure, cancellation and receipt gating\n",
+      "rerunAfterFinalChange": true
+    },
+    {
+      "name": "test_editor_world_entrypoints.py",
+      "exitCode": 0,
+      "seconds": 0.32,
+      "log": "test_editor_world_entrypoints.py.log",
+      "output": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.276s\n\nOK\n"
+    },
+    {
+      "name": "test_evolution_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.36,
+      "log": "test_evolution_core.cpp.log",
+      "output": "Evolution core: 75 checks passed.\n"
+    },
+    {
+      "name": "test_farm_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.85,
+      "log": "test_farm_core.cpp.log",
+      "output": "Farm collision core: 32733 checks passed\n"
+    },
+    {
+      "name": "test_farm_session_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.3,
+      "log": "test_farm_session_core.cpp.log",
+      "output": "farm session core: 12330 checks passed\n"
+    },
+    {
+      "name": "test_field_movement_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.44,
+      "log": "test_field_movement_core.cpp.log",
+      "output": "Field movement regression core: 27 checks passed\n"
+    },
+    {
+      "name": "test_field_presentation.cpp",
+      "exitCode": 0,
+      "seconds": 0.42,
+      "log": "test_field_presentation.cpp.log",
+      "output": "Field presentation: source body fit, map/farm scaling, zoom and bounded camera checks passed.\n"
+    },
+    {
+      "name": "test_gameplay_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.72,
+      "log": "test_gameplay_core.cpp.log",
+      "output": "PASS: 932 checks; combat, reserves/SP, activity rollover, XP, ranked energy/calendar/grades/Elo.\n"
+    },
+    {
+      "name": "test_ghostline_adapter.py",
+      "exitCode": 0,
+      "seconds": 5.87,
+      "log": "test_ghostline_adapter.py.log",
+      "output": "Live profile contract: native authority, independent masteries, full campaign routing and conflicting checkpoints passed\nSuper Xros Wars adapter: all30 reports, loss/retry, reveal26, persistent hacks, final receipt and return-visit checks passed\ncampaign 0: 27 battles, 0 reports, 8 badges; receipt, gating and mastery checks passed\ncampaign 1: 35 battles, 17 reports, 17 badges; receipt, gating and mastery checks passed\ncampaign 2: 30 battles, 30 reports, 30 badges; receipt, gating and mastery checks passed\nNative campaign state-machine checks passed. Unreal compilation and play testing remain separate gates.\n"
+    },
+    {
+      "name": "test_ghostline_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.4,
+      "log": "test_ghostline_core.cpp.log",
+      "output": "PASS GhostLine core: 1362 checks; 31 maps, 30 reports/battles, earned reveal, clean recorder, save recovery, one-time mastery\n"
+    },
+    {
+      "name": "test_healing_presentation_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.57,
+      "log": "test_healing_presentation_core.cpp.log",
+      "output": "Healing presentation core: 392 checks passed.\n"
+    },
+    {
+      "name": "test_imported_map_collision.py",
+      "exitCode": 0,
+      "seconds": 1.12,
+      "log": "test_imported_map_collision.py.log",
+      "output": "500 imported native CollisionCore spawn checks, radius 8: 0 failures\n.\n----------------------------------------------------------------------\nRan 1 test in 1.064s\n\nOK\n"
+    },
+    {
+      "name": "test_initiative_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.98,
+      "log": "test_initiative_core.cpp.log",
+      "output": "PASS: 17 initiative checks; synthetic two-hit mirrors, stable ties, CTB extra turns, replay/arrival independence, reserves and command fencing.\n"
+    },
+    {
+      "name": "test_manual_saving.py",
+      "exitCode": 0,
+      "seconds": 4.97,
+      "log": "test_manual_saving.py.log",
+      "output": "715 production-method retention checks passed (portable UE doubles; not Unreal I/O/networking).\ntest_actual_retention_save_load_and_revision_methods (__main__.ManualSavingTests.test_actual_retention_save_load_and_revision_methods) ... ok\ntest_admin_checkpoint_includes_offline_profiles_and_ledgers (__main__.ManualSavingTests.test_admin_checkpoint_includes_offline_profiles_and_ledgers) ... ok\ntest_commerce_stages_every_participant_before_any_manual_disk_write (__main__.ManualSavingTests.test_commerce_stages_every_participant_before_any_manual_disk_write) ... ok\ntest_default_and_config_are_disabled (__main__.ManualSavingTests.test_default_and_config_are_disabled) ... ok\ntest_negative_control_detects_missing_session_handoff (__main__.ManualSavingTests.test_negative_control_detects_missing_session_handoff) ... ok\ntest_negative_control_detects_unconditional_automatic_writes (__main__.ManualSavingTests.test_negative_control_detects_unconditional_automatic_writes) ... ok\ntest_ordinary_logout_has_no_force_save (__main__.ManualSavingTests.test_ordinary_logout_has_no_force_save) ... ok\ntest_rival_and_ranked_gates_precede_serialization (__main__.ManualSavingTests.test_rival_and_ranked_gates_precede_serialization) ... ok\ntest_unsaved_season_history_outlives_bounded_profile_window (__main__.ManualSavingTests.test_unsaved_season_history_outlives_bounded_profile_window) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 4.916s\n\nOK\n"
+    },
+    {
+      "name": "test_map_presentation.py",
+      "exitCode": 0,
+      "seconds": 1.09,
+      "log": "test_map_presentation.py.log",
+      "output": "Editor map previews: initial map, selection, distant focus, bounded residency and invalid coordinates passed\n..\n----------------------------------------------------------------------\nRan 2 tests in 1.035s\n\nOK\n"
+    },
+    {
+      "name": "test_nameplate_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.38,
+      "log": "test_nameplate_core.cpp.log",
+      "output": "Nameplate core: 533 checks passed\n"
+    },
+    {
+      "name": "test_packaged_startup.py",
+      "exitCode": 0,
+      "seconds": 0.6,
+      "log": "test_packaged_startup.py.log",
+      "output": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.537s\n\nOK\n"
+    },
+    {
+      "name": "test_private_campaign_geometry.py",
+      "exitCode": 0,
+      "seconds": 1.86,
+      "log": "test_private_campaign_geometry.py.log",
+      "output": "12 pivot/PPU cases with no public map actors; render/collision agreement, spawn, BFS, NPC spacing, origin invariance, wall sweep and invalid-data checks passed\n..\n----------------------------------------------------------------------\nRan 2 tests in 1.802s\n\nOK\n"
+    },
+    {
+      "name": "test_profile_sync.py",
+      "exitCode": 0,
+      "seconds": 0.88,
+      "log": "test_profile_sync.py.log",
+      "output": "PASS: production framing, window, CRC, replay, corruption, generation and boundary tests (1 byte through 32 MiB)\nPASS: synthetic grade A, reconnect 1: 144,606 JSON bytes -> 59,594 compressed bytes; exact restoration\nPASS: synthetic grade A, reconnect 2: 144,606 JSON bytes -> 59,594 compressed bytes; exact restoration\nPASS: synthetic grade B, reconnect 1: 144,606 JSON bytes -> 59,595 compressed bytes; exact restoration\nPASS: synthetic grade B, reconnect 2: 144,606 JSON bytes -> 59,595 compressed bytes; exact restoration\ntest_authentication_diagnostics_are_not_inferred_from_an_empty_name (__main__.ProfileSyncTests.test_authentication_diagnostics_are_not_inferred_from_an_empty_name) ... ok\ntest_invalid_storage_fails_closed (__main__.ProfileSyncTests.test_invalid_storage_fails_closed) ... ok\ntest_loading_widget_exists_before_slate_construction (__main__.ProfileSyncTests.test_loading_widget_exists_before_slate_construction) ... ok\ntest_login_hud_and_gameplay_have_readiness_barriers (__main__.ProfileSyncTests.test_login_hud_and_gameplay_have_readiness_barriers) ... ok\ntest_production_core_boundaries_and_adverse_delivery (__main__.ProfileSyncTests.test_production_core_boundaries_and_adverse_delivery) ... ok\ntest_profile_is_no_longer_one_replicated_property (__main__.ProfileSyncTests.test_profile_is_no_longer_one_replicated_property) ... ok\ntest_save_targets_initialized_authoritative_owner (__main__.ProfileSyncTests.test_save_targets_initialized_authoritative_owner) ... ok\ntest_saving_policy_is_explicit_and_not_a_backup_workaround (__main__.ProfileSyncTests.test_saving_policy_is_explicit_and_not_a_backup_workaround) ... ok\ntest_six_party_season_ranked_a_b_repeated_reconnections (__main__.ProfileSyncTests.test_six_party_season_ranked_a_b_repeated_reconnections) ... ok\ntest_staging_is_atomic_and_revision_fenced (__main__.ProfileSyncTests.test_staging_is_atomic_and_revision_fenced) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.830s\n\nOK\n"
+    },
+    {
+      "name": "test_profile_sync_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.83,
+      "log": "test_profile_sync_core.cpp.log",
+      "output": "PASS: production framing, window, CRC, replay, corruption, generation and boundary tests (1 byte through 32 MiB)\n"
+    },
+    {
+      "name": "test_progression_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.47,
+      "log": "test_progression_core.cpp.log",
+      "output": "Progression core: 638 checks passed.\n"
+    },
+    {
+      "name": "test_recovery_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.48,
+      "log": "test_recovery_core.cpp.log",
+      "output": "Recovery core: 54 checks passed.\n"
+    },
+    {
+      "name": "test_relay_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.34,
+      "log": "test_relay_core.cpp.log",
+      "output": "PASS Relay championship, defeat/reclaim, proven-title backfill, independent Firewall mastery, saturation and real-party XP milestone invariants\n"
+    },
+    {
+      "name": "test_relay_session_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.31,
+      "log": "test_relay_session_core.cpp.log",
+      "output": "relay session core: 18622 checks passed\n"
+    },
+    {
+      "name": "test_reward_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.39,
+      "log": "test_reward_core.cpp.log",
+      "output": "PASS source reward core: 2112 checks\n"
+    },
+    {
+      "name": "test_rival_habitat_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.31,
+      "log": "test_rival_habitat_core.cpp.log",
+      "output": "Rival habitat core: 25 checks passed.\n"
+    },
+    {
+      "name": "test_rival_training_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.76,
+      "log": "test_rival_training_core.cpp.log",
+      "output": "Rival training core: 1140 checks passed.\n"
+    },
+    {
+      "name": "test_rival_training_registry.py",
+      "exitCode": 0,
+      "seconds": 1.29,
+      "log": "test_rival_training_registry.py.log",
+      "output": "Real registry: 500/500 habitats populated; 1-4 tamers per habitat.\nRival training core: 14144 checks passed.\n"
+    },
+    {
+      "name": "test_scan_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.4,
+      "log": "test_scan_core.cpp.log",
+      "output": "Scan/DigiDex core: 1565 checks passed\n"
+    },
+    {
+      "name": "test_season_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.49,
+      "log": "test_season_core.cpp.log",
+      "output": "Season core: 117 checks passed.\n"
+    },
+    {
+      "name": "test_server_console_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.36,
+      "log": "test_server_console_core.cpp.log",
+      "output": "557 native console parser/authority/numeric checks passed\n"
+    },
+    {
+      "name": "test_server_console_enum_extraction.py",
+      "exitCode": 0,
+      "seconds": 0.05,
+      "log": "test_server_console_enum_extraction.py.log",
+      "output": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.009s\n\nOK\n"
+    },
+    {
+      "name": "test_settings_config_api.py",
+      "exitCode": 0,
+      "seconds": 0.79,
+      "log": "test_settings_config_api.py.log",
+      "output": "12 actual settings API and credential-precedence checks passed\n..\n----------------------------------------------------------------------\nRan 2 tests in 0.736s\n\nOK\n"
+    },
+    {
+      "name": "test_social_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.24,
+      "log": "test_social_core.cpp.log",
+      "output": "PASS: 322 social/clan authorization and limit checks\n"
+    },
+    {
+      "name": "test_sprite_coordinates.py",
+      "exitCode": 0,
+      "seconds": 1.31,
+      "log": "test_sprite_coordinates.py.log",
+      "output": "36 geometry cases, six sample points each, LOD checks, and malformed-data checks passed\n..\n----------------------------------------------------------------------\nRan 2 tests in 1.262s\n\nOK\n"
+    },
+    {
+      "name": "test_starter_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.7,
+      "log": "test_starter_core.cpp.log",
+      "output": "Starter core: 29 checks passed.\n"
+    },
+    {
+      "name": "test_tamer_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.37,
+      "log": "test_tamer_core.cpp.log",
+      "output": "Tamer catalogue core: 2275 checks passed\n"
+    },
+    {
+      "name": "test_timeline_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.44,
+      "log": "test_timeline_core.cpp.log",
+      "output": "Continuous speed timeline: 8550 checks passed\n"
+    },
+    {
+      "name": "test_trade_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.26,
+      "log": "test_trade_core.cpp.log",
+      "output": "Trade settlement core: 22176 conservation, capacity and currency boundary checks passed.\n"
+    },
+    {
+      "name": "test_unity_compile.py",
+      "exitCode": 0,
+      "seconds": 0.08,
+      "log": "test_unity_compile.py.log",
+      "output": "..s\n----------------------------------------------------------------------\nRan 3 tests in 0.030s\n\nOK (skipped=1)\n"
+    },
+    {
+      "name": "test_unranked_rivals_integration.py",
+      "exitCode": 0,
+      "seconds": 0.56,
+      "log": "test_unranked_rivals_integration.py.log",
+      "output": "Actual same-map rival simulation: 23 eligibility, paired-result, snapshot and cooldown checks passed.\n.\n----------------------------------------------------------------------\nRan 1 test in 0.519s\n\nOK\n"
+    },
+    {
+      "name": "test_unranked_settlement_integration.py",
+      "exitCode": 0,
+      "seconds": 0.57,
+      "log": "test_unranked_settlement_integration.py.log",
+      "output": "Actual friendly settlement: 28 paired publication, retry, reconnect and state-preservation checks passed.\n.\n----------------------------------------------------------------------\nRan 1 test in 0.516s\n\nOK\n"
+    },
+    {
+      "name": "test_variant_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.35,
+      "log": "test_variant_core.cpp.log",
+      "output": "Firewall variety core: 3751 checks passed\n"
+    },
+    {
+      "name": "test_video_policy_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.44,
+      "log": "test_video_policy_core.cpp.log",
+      "output": "PASS: 83 video policy, preset, finite-input and confirmation lifecycle checks\n"
+    },
+    {
+      "name": "test_wild_group_adapter.py",
+      "exitCode": 0,
+      "seconds": 2.99,
+      "log": "test_wild_group_adapter.py.log",
+      "output": "PASS actual wild group adapters: 260 checks (portable UE stand-ins; not an Unreal build)\n"
+    },
+    {
+      "name": "test_windows_build_boundary.py",
+      "exitCode": 0,
+      "seconds": 0.04,
+      "log": "test_windows_build_boundary.py.log",
+      "output": "...s...\n----------------------------------------------------------------------\nRan 7 tests in 0.002s\n\nOK (skipped=1)\n"
+    },
+    {
+      "name": "test_world_chat_core.cpp",
+      "exitCode": 0,
+      "seconds": 0.36,
+      "log": "test_world_chat_core.cpp.log",
+      "output": "1050 world chat core checks passed\n"
+    },
+    {
+      "name": "test_world_chat_integration.py",
+      "exitCode": 0,
+      "seconds": 1.67,
+      "log": "test_world_chat_integration.py.log",
+      "output": "Actual WORLD methods: 81 checks passed (portable UE doubles, not engine networking).\n...\n----------------------------------------------------------------------\nRan 3 tests in 1.626s\n\nOK\n"
+    },
+    {
+      "name": "test_world_chat_scrollbar_api.py",
+      "exitCode": 0,
+      "seconds": 0.11,
+      "log": "test_world_chat_scrollbar_api.py.log",
+      "output": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.048s\n\nOK\n"
+    }
+  ],
+  "pluginVersion": "1.0.2-native-source",
+  "generatedUtc": "2026-10-13T17:34:15.244837+00:00",
+  "environment": {
+    "os": "Linux",
+    "python": "3.12.14",
+    "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+    "powershellAvailable": false
+  },
+  "suiteKinds": {
+    "nativeCpp": 39,
+    "python": 30
+  },
+  "method": "Full portable suite with setup orchestration refreshed after final configuration isolation change. Source and content validation plus baseline workflow audit; no Unreal/MSVC build or editor import executed.",
+  "skippedBehavioralTests": [
+    {
+      "suite": "test_windows_build_boundary.py",
+      "test": "test_powershell_receipt_and_native_build_behaviors",
+      "reason": "PowerShell unavailable"
+    }
+  ],
+  "notExecuted": [
+    "Fresh UnrealHeaderTool and UE5.8 Editor/Game compilation of corrected1.0.2 source",
+    "Actual editor/commandlet world creation, content import and startup validation",
+    "PowerShell native build/package behavioral fixtures",
+    "Win64 cook/package and executable launch",
+    "Separate host/client account login, replication, combat, persistence and reconnect",
+    "In-engine UI/artwork inspection and performance/load testing"
+  ],
+  "suppliedBuildLog": {
+    "engine": "5.8.3",
+    "msvc": "14.44.35229",
+    "unrealHeaderToolPassed": true,
+    "cppCompilationPassed": false,
+    "errorDiagnosticCount": 36,
+    "rootCauseCount": 4,
+    "warnings": 0,
+    "correctedSourceRebuildExecuted": false
+  },
+  "additionalChecks": [
+    {
+      "name": "Plugin and source-content validator",
+      "exitCode": 0,
+      "executedVersion": "1.0.2-native-source",
+      "output": "PASS: DigimonVenomNXT descriptor has its Runtime/Editor modules and content mount.\nPASS: Paper2D, CommonUI and EnhancedInput dependencies are declared.\nPASS: Native content payload: {\"baseSpecies\": 502, \"checks\": [\"All native import destinations are unique and confined to the plugin mount.\", \"Every imported texture/audio source exists and matches its recorded SHA1.\", \"All sprite, flipbook, partner and tamer references resolve.\", \"All 8 directions are present for every tamer.\", \"Every evolution and encounter species exists in the canonical registry.\", \"Every source map/clip mask SHA256 matches.\", \"All packed masks exactly reproduce native source pixels, with verified safe spawns.\"], \"counts\": {\"animations\": 8648, \"audio\": 319, \"partnerSets\": 2008, \"sprites\": 41982, \"tamerSets\": 64, \"textures\": 16164}, \"maps\": 500, \"passed\": true, \"requiredCatalogAssets\": 14950, \"schemaVersion\": 1, \"unrealBuildExecuted\": false, \"unregisteredCatalogMedia\": []}\nPASS: Source literals/comments are terminated and escaped (226 C++ files)\nPASS: Settings class users include its definition directly for independent translation-unit compilation\nPASS: Reflected class metadata uses long object paths for AllowedClasses, DisallowedClasses, MetaClass and MustImplement\nPASS: Replicated properties and RPC struct parameters contain no unsupported TMap/TSet members\nPASS: HasActiveBattle is declared once in the public PlayerState interface\nPASS: No unsupported ApplicationContextMask automation flag\nPASS: No deprecated UImage SetBrushSize calls\nPASS: Native WORLD chat uses the UScrollBox scrollbar-thickness setter\nPASS: Widget member definitions do not declare a shadowing Slot variable\nPASS: Actor member definitions do not declare a shadowing Role variable\nPASS: PlayerController definitions across all source files do not hide inherited Player or Pawn members\nPASS: Social policy constants remain qualified and do not shadow local member/leader records\nPASS: HUD member definitions do not shadow the Panel palette constant\nPASS: External callers use the public battle-class accessor instead of protected configuration\nPASS: Native field/care buttons use UE5.8 constructor-based focus initialization\nPASS: Runtime sprite coordinates do not call the five editor-only Paper2D APIs reported by Shipping\nPASS: Windows packaging entry points and native validation helpers are present.\n20 source/content checks passed; 0 failures. Unreal compilation/play testing was not performed.\n"
+    },
+    {
+      "name": "C++ compile surface guard",
+      "exitCode": 0,
+      "executedVersion": "1.0.2-native-source",
+      "output": "C++ source regression checks only; this is not an Unreal compilation.\nPASS: Source literals/comments are terminated and escaped (226 C++ files)\nPASS: Settings class users include its definition directly for independent translation-unit compilation\nPASS: Reflected class metadata uses long object paths for AllowedClasses, DisallowedClasses, MetaClass and MustImplement\nPASS: Replicated properties and RPC struct parameters contain no unsupported TMap/TSet members\nPASS: HasActiveBattle is declared once in the public PlayerState interface\nPASS: No unsupported ApplicationContextMask automation flag\nPASS: No deprecated UImage SetBrushSize calls\nPASS: Native WORLD chat uses the UScrollBox scrollbar-thickness setter\nPASS: Widget member definitions do not declare a shadowing Slot variable\nPASS: Actor member definitions do not declare a shadowing Role variable\nPASS: PlayerController definitions across all source files do not hide inherited Player or Pawn members\nPASS: Social policy constants remain qualified and do not shadow local member/leader records\nPASS: HUD member definitions do not shadow the Panel palette constant\nPASS: External callers use the public battle-class accessor instead of protected configuration\nPASS: Native field/care buttons use UE5.8 constructor-based focus initialization\nPASS: Runtime sprite coordinates do not call the five editor-only Paper2D APIs reported by Shipping\n16 source checks passed; 0 failures.\n"
+    },
+    {
+      "name": "Server console integration",
+      "exitCode": 0,
+      "output": "PASS No reflected command transport: Console commands/output have no Blueprint, RPC or replicated entry point.\nPASS Local UI is the only command caller: ['DigimonVenomNXTServerConsoleWidget.cpp']\nPASS One host capability arming path: ['DigimonVenomNXTGameInstance.cpp']\nPASS Host gate checks provenance and identity: Authority alone does not grant console access.\nPASS Gated console ReadEntries: Each read rechecks the requesting controller.\nPASS Gated console GetStatus: Each read rechecks the requesting controller.\nPASS Gated console GetCommandHelp: Each read rechecks the requesting controller.\nPASS Save before profile publication: Actual portable commit policy receives durable-write and live-publication callbacks after the battle guard.\nPASS Live and saved battles lock edits: Finished battle views and suspended campaign/Season checkpoints stay protected.\nPASS Disconnecting identities cannot fall back to offline edits: A connected account signing out is rejected before loading its older saved profile.\nPASS Profile publication rejects closing sessions: The final commit gate also blocks a live target whose session is closing.\nPASS Bounded sanitized activity buffer: Records are sanitized and retained within a fixed bound on the host.\nPASS Revocation erases private output: Sessions cannot inherit capability, output or confirmations.\nPASS Local authentication precedes arming: Local account/password checks run before listen travel.\nPASS Chat cannot dispatch commands: Player slash text remains ordinary chat.\nPASS Gameplay gate closes logout race: Queued player RPCs cannot change a profile after final save approval.\nPASS Logout saves before disconnect: Save failures do not disconnect players.\nPASS Logout acknowledgement is request bound: Only a matching successful save acknowledgement initiates travel.\nPASS Denied UI purges cached output: Revoked host access collapses and clears the private widget.\nPASS Equipped titles publish in public identity: Host-assigned titles reach the nameplate snapshot.\nPASS Title rendering is bounded: Native plain-text titles are limited to 32 characters.\nPASS Gated native ExecuteCommand: Each execution path checks the live host capability before dispatch.\nPASS Gated native ExecuteSensitiveCommand: Each execution path checks the live host capability before dispatch.\nPASS Gated native RunCommand: Each execution path checks the live host capability before dispatch.\nPASS Battle activity follows transaction fence: Uncommitted or rolled-back decisions never enter the activity stream.\nPASS Battle result activity is deduplicated: Repeated publication does not emit duplicate resolved actions/results.\nPASS Ban lookup follows account verification: Arbitrary attempted usernames cannot impersonate account moderation identity.\nPASS Authentication activity excludes credentials: Account activity records do not contain credential input or raw authentication errors.\nPASS Player-state moderation gate ServerChooseStarter_Implementation: Player mutations use the shared authority/authentication/detention gate, directly or through the checked recovery/farm handler.\nPASS Player-state moderation gate ServerSetParty_Implementation: Player mutations use the shared authority/authentication/detention gate, directly or through the checked recovery/farm handler.\nPASS Player-state moderation gate ServerSetTamerStyle_Implementation: Player mutations use the shared authority/authentication/detention gate, directly or through the checked recovery/farm handler.\nPASS Player-state moderation gate ServerMaterialize_Implementation: Player mutations use the shared authority/authentication/detention gate, directly or through the checked recovery/farm handler.\nPASS Player-state moderation gate ServerHealAll_Implementation: Player mutations use the shared authority/authentication/detention gate, directly or through the checked recovery/farm handler.\nPASS Player-state moderation gate ServerRequestDigiLabHeal_Implementation: Player mutations use the shared authority/authentication/detention gate, directly or through the checked recovery/farm handler.\nPASS Player-state moderation gate ServerFeedABIMeat_Implementation: Player mutations use the shared authority/authentication/detention gate, directly or through the checked recovery/farm handler.\nPASS Player-state moderation gate ServerConvertDigiRubiesToCredits_Implementation: Player mutations use the shared authority/authentication/detention gate, directly or through the checked recovery/farm handler.\nPASS Player-state moderation gate ServerPurchaseItem_Implementation: Player mutations use the shared authority/authentication/detention gate, directly or through the checked recovery/farm handler.\nPASS Player-state moderation gate ServerUseHealingItem_Implementation: Player mutations use the shared authority/authentication/detention gate, directly or through the checked recovery/farm handler.\nPASS Player-state moderation gate ServerSetFarmResident_Implementation: Player mutations use the shared authority/authentication/detention gate, directly or through the checked recovery/farm handler.\nPASS Player-state moderation gate ServerFeedFarmResident_Implementation: Player mutations use the shared authority/authentication/detention gate, directly or through the checked recovery/farm handler.\nPASS Player-state moderation gate ServerUseCAMTreat_Implementation: Player mutations use the shared authority/authentication/detention gate, directly or through the checked recovery/farm handler.\nPASS Player-state moderation gate ServerUseABIMeat_Implementation: Player mutations use the shared authority/authentication/detention gate, directly or through the checked recovery/farm handler.\nPASS Player-state moderation gate ServerUseDigiMeat_Implementation: Player mutations use the shared authority/authentication/detention gate, directly or through the checked recovery/farm handler.\nPASS Player-state moderation gate ServerEvolve_Implementation: Player mutations use the shared authority/authentication/detention gate, directly or through the checked recovery/farm handler.\nPASS Player-state moderation gate ServerDeEvolve_Implementation: Player mutations use the shared authority/authentication/detention gate, directly or through the checked recovery/farm handler.\nPASS New console enum members resolve: All referenced Digimon enumerators exist in the shipped headers.\nPASS Rival saves use world subsystem lifetime: World subsystem lookup prevents the GameInstance template static assertion.\nPASS No generic command evaluator: Console actions cannot escape to a shell or generic engine evaluator.\nConsole integration source checks: 48 passed, 0 failed. Unreal build/live multiplayer not run.\n",
+      "executedVersion": "1.0.1-native-source; relevant production sources/data unchanged"
+    },
+    {
+      "name": "Campaign source comparison",
+      "exitCode": 0,
+      "output": "[\n  {\n    \"id\": \"dawn_relay\",\n    \"maps\": 18,\n    \"npcs\": 60,\n    \"dialogueBranches\": 282,\n    \"battles\": 33\n  },\n  {\n    \"id\": \"world_ds_paradox\",\n    \"maps\": 18,\n    \"npcs\": 92,\n    \"dialogueBranches\": 638,\n    \"battles\": 35\n  },\n  {\n    \"id\": \"xros_ghostline\",\n    \"maps\": 31,\n    \"npcs\": 141,\n    \"dialogueBranches\": 1148,\n    \"battles\": 30\n  }\n]\n",
+      "executedVersion": "1.0.1-native-source; relevant production sources/data unchanged"
+    },
+    {
+      "name": "Five campaign translation units O0",
+      "exitCode": 0,
+      "output": "Command: python work/DigimonVenomNXT/Tools/run_digimon_campaign_tests.py --optimization 0\nLive profile contract: native authority, independent masteries, full campaign routing and conflicting checkpoints passed\nSuper Xros Wars adapter: all30 reports, loss/retry, reveal26, persistent hacks, final receipt and return-visit checks passed\ncampaign 0: 27 battles, 0 reports, 8 badges; receipt, gating and mastery checks passed\ncampaign 1: 35 battles, 17 reports, 17 badges; receipt, gating and mastery checks passed\ncampaign 2: 30 battles, 30 reports, 30 badges; receipt, gating and mastery checks passed\nNative campaign state-machine checks passed. Unreal compilation and play testing remain separate gates.\n\nExit status: 0\n",
+      "executedVersion": "1.0.1-native-source; relevant production sources/data unchanged"
+    },
+    {
+      "name": "Five campaign translation units O2",
+      "exitCode": 0,
+      "output": "Command: python Tools/run_digimon_campaign_tests.py --optimization 2\nWorking directory: /workspace/scratch/5c57700d2519/work/DigimonVenomNXT\nCaptured output from completed execution (exit code 0):\n\nLive profile contract: native authority, independent masteries, full campaign routing and conflicting checkpoints passed\nSuper Xros Wars adapter: all30 reports, loss/retry, reveal26, persistent hacks, final receipt and return-visit checks passed\ncampaign 0: 27 battles, 0 reports, 8 badges; receipt, gating and mastery checks passed\ncampaign 1: 35 battles, 17 reports, 17 badges; receipt, gating and mastery checks passed\ncampaign 2: 30 battles, 30 reports, 30 badges; receipt, gating and mastery checks passed\nNative campaign state-machine checks passed. Unreal compilation and play testing remain separate gates.\n",
+      "executedVersion": "1.0.1-native-source; relevant production sources/data unchanged"
+    },
+    {
+      "name": "Python syntax",
+      "exitCode": 0,
+      "executedVersion": "1.0.2-native-source",
+      "output": "37 top-level Python tool files parsed."
+    }
+  ],
+  "contentCounts": {
+    "schemaVersion": 1,
+    "baseSpecies": 502,
+    "varietySpecies": 2008,
+    "varieties": {
+      "normal": 502,
+      "paradox": 502,
+      "shiny": 502,
+      "firewall": 502
+    },
+    "publicMaps": 500,
+    "regions": {
+      "dawn": 254,
+      "world_ds": 150,
+      "xros_wars": 96
+    },
+    "tamers": 64,
+    "effects": 96,
+    "counts": {
+      "textures": 16164,
+      "sprites": 41982,
+      "animations": 8648,
+      "audio": 319,
+      "partnerSets": 2008,
+      "tamerSets": 64
+    },
+    "referencedSourceFiles": 14949,
+    "missingReferences": [],
+    "mapRegistrySha256": "dc3ef92336441c43234af440ac521ef6eb3dda1dea8131e6d011bc3f3a8a99c8",
+    "speciesRegistrySha256": "85fee5f51d5da3794656288a67696ab71f6bd1ca6932728b1f5f66433337d0fc",
+    "importManifestSha256": "91e9215f1afb972128078a4e7187eb62e31e3120b34fba658dfc49cf1ca305bd",
+    "unrealBuildExecuted": false,
+    "playableMapContentFingerprint": "1e216b48ea86541b3476268cd10f4be712f43f06a99b10710a0e80040cfadaa1",
+    "playableMapContentRevision": "DVNXT-1e216b48ea86541b"
+  },
+  "registrySha256": {
+    "Resources/DigimonMaps.json": "dc3ef92336441c43234af440ac521ef6eb3dda1dea8131e6d011bc3f3a8a99c8",
+    "Resources/DigimonSpecies.json": "85fee5f51d5da3794656288a67696ab71f6bd1ca6932728b1f5f66433337d0fc",
+    "Resources/GameData/import_manifest.json": "91e9215f1afb972128078a4e7187eb62e31e3120b34fba658dfc49cf1ca305bd"
+  },
+  "originalSourceAudits": [
+    {
+      "name": "Original GameEngine encounter-pool parity",
+      "result": "passed",
+      "orderedPoolArraysCompared": 2000,
+      "publicMaps": 500,
+      "varieties": 4,
+      "originalSourceRequired": true,
+      "includedInPortableSuiteCount": false,
+      "evidence": "Content conversion audit compiled/executed original GameEngine selection and compared all ordered pools to the shipped registry; reported equality for all 2,000 arrays.",
+      "lastExecutedVersion": "1.0.0-native-source; registries unchanged through1.0.2"
+    }
+  ],
+  "sourceTreeFingerprintMethod": "SHA256 of sorted Source relative paths and contents separated by NUL bytes",
+  "sourceTreeSha256": "26e1fb7c6a7efd9a61f7c95d73e560ddc2dc17351544a732dee5740ce2b6a135",
+  "launcherHotfixVerification": {
+    "pluginVersion": "1.0.3-native-source",
+    "generatedUtc": "2026-10-13T18:39:03.454680+00:00",
+    "test": "Tools/test_windows_build_boundary.py",
+    "total": 10,
+    "passed": 8,
+    "skipped": 2,
+    "failed": 0,
+    "output": "s.....s...\n----------------------------------------------------------------------\nRan 10 tests in 0.002s\n\nOK (skipped=2)\n",
+    "windowsLauncherExecuted": false,
+    "unrealBuildExecuted": false,
+    "note": "Earlier full-suite results describe 1.0.2; gameplay/editor source and assets are unchanged."
+  },
+  "buildPreparationFixVerification": {
+    "pluginVersion": "1.0.4-native-source",
+    "evidence": "build_verification_1.0.4.json",
+    "powerShellFixtureCasesPassed": 103,
+    "powerShellScriptsParsed": 11,
+    "hostWorkflowTestsPassed": 3,
+    "windowsBoundaryTestsPassed": 9,
+    "windowsBoundaryTestsSkipped": 1,
+    "shippedSourcePreflightPassed": true,
+    "unrealBuildExecuted": false,
+    "windowsPackageBuilt": false
+  },
+  "commandletFixVerification": {
+    "pluginVersion": "1.0.5-native-source",
+    "evidence": "commandlet_verification_1.0.5.json",
+    "suppliedPriorEditorBuildSucceeded": true,
+    "currentFixUnrealRebuildExecuted": false,
+    "powerShellBuildFixturesPassed": 58,
+    "compiledActualCppLifecycleScenarios": 8,
+    "sourceContentChecksPassed": 21
+  }
+}

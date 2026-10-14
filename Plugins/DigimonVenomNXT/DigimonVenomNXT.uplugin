@@ -1,0 +1,38 @@
+{
+  "FileVersion": 3,
+  "Version": 10006,
+  "VersionName": "1.0.6-native-source",
+  "FriendlyName": "DigimonVenomNXT",
+  "Description": "Native Digimon Venom NXT gameplay, server systems, source-content importer and editor tooling for Unreal Engine 5.8.",
+  "Category": "Gameplay",
+  "CreatedBy": "Digimon Venom NXT",
+  "CanContainContent": true,
+  "IsBetaVersion": true,
+  "Installed": false,
+  "Modules": [
+    {
+      "Name": "DigimonVenomNXTRuntime",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name": "DigimonVenomNXTEditor",
+      "Type": "Editor",
+      "LoadingPhase": "Default"
+    }
+  ],
+  "Plugins": [
+    {
+      "Name": "Paper2D",
+      "Enabled": true
+    },
+    {
+      "Name": "CommonUI",
+      "Enabled": true
+    },
+    {
+      "Name": "EnhancedInput",
+      "Enabled": true
+    }
+  ]
+}

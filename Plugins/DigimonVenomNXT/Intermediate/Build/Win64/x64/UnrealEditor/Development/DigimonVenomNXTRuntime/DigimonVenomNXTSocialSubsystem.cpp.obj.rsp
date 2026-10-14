@@ -1,0 +1,14 @@
+"C:/Users/Leen/Documents/Unreal Projects/DigimonVenomNXT/Plugins/DigimonVenomNXT/Source/DigimonVenomNXTRuntime/Private/DigimonVenomNXTSocialSubsystem.cpp"
+@"C:/Users/Leen/Documents/Unreal Projects/DigimonVenomNXT/Plugins/DigimonVenomNXT/Intermediate/Build/Win64/x64/UnrealEditor/Development/DigimonVenomNXTRuntime/DigimonVenomNXTRuntime.Shared.rsp"
+/FI"C:/Users/Leen/Documents/Unreal Projects/DigimonVenomNXT/Intermediate/Build/Win64/x64/UnrealEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.h"
+/FI"C:/Users/Leen/Documents/Unreal Projects/DigimonVenomNXT/Plugins/DigimonVenomNXT/Intermediate/Build/Win64/x64/UnrealEditor/Development/DigimonVenomNXTRuntime/Definitions.DigimonVenomNXTRuntime.h"
+/Yu"C:/Users/Leen/Documents/Unreal Projects/DigimonVenomNXT/Intermediate/Build/Win64/x64/UnrealEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.h"
+/Fp"C:/Users/Leen/Documents/Unreal Projects/DigimonVenomNXT/Intermediate/Build/Win64/x64/UnrealEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.h.pch"
+/Fo"C:/Users/Leen/Documents/Unreal Projects/DigimonVenomNXT/Plugins/DigimonVenomNXT/Intermediate/Build/Win64/x64/UnrealEditor/Development/DigimonVenomNXTRuntime/DigimonVenomNXTSocialSubsystem.cpp.obj"
+/experimental:log "C:/Users/Leen/Documents/Unreal Projects/DigimonVenomNXT/Plugins/DigimonVenomNXT/Intermediate/Build/Win64/x64/UnrealEditor/Development/DigimonVenomNXTRuntime/DigimonVenomNXTSocialSubsystem.cpp.sarif"
+/sourceDependencies "C:/Users/Leen/Documents/Unreal Projects/DigimonVenomNXT/Plugins/DigimonVenomNXT/Intermediate/Build/Win64/x64/UnrealEditor/Development/DigimonVenomNXTRuntime/DigimonVenomNXTSocialSubsystem.cpp.dep.json"
+/nologo
+/TP
+/GR-
+/std:c++20
+/wd5054

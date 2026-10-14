@@ -1,0 +1,65 @@
+DigimonVenomNXT 1.0.2 — startup, world import and playable-entry repair
+
+This cumulative source update includes the 1.0.1 compiler corrections.
+Apply it to the previously supplied full plugin. All raw map, Digimon, tamer,
+interface and audio assets remain in your existing Resources folder.
+
+INSTALL
+1. Close Unreal Editor and stop the running game/build.
+2. Extract this ZIP into <Project>\Plugins. Merge/overwrite the existing
+   DigimonVenomNXT folder. Do not create a second nested plugin folder.
+3. Rebuild Development Editor / Win64 and open the project.
+4. If you already imported the artwork, run:
+   Tools > Digimon Venom NXT: Create / Repair Main Menu + Public World
+   This creates the missing levels and repairs their native game modes and
+   project startup configuration. It preserves unrelated actors and saves.
+5. Run Tools > Digimon Venom NXT: Build Complete Game Content to finish and
+   verify all game assets. Import All Bundled Assets now performs this same
+   full setup. A complete import is required before packaging.
+6. Use Tools > Digimon Venom NXT: Open Main Menu, then press Play.
+
+Keep Content, Resources and Saved. There is no need to redownload the large
+unchanged artwork or delete accounts/profiles. Import progress is reusable
+only when its source and saved-package hashes match.
+
+PLAY / HOST / JOIN
+MainMenu runs the native menu game mode. Create Account or Login stages your
+credentials; then choose Host or Join. Host uses the hosting password configured
+under Project Settings > Game > Digimon Venom NXT. The main menu shows setup
+guidance if that password has not been configured.
+
+The hosting server verifies accounts and profiles, then the native PublicWorld
+game mode spawns the player. New accounts begin in their private DigiFarm and
+choose a starter from Overview. Use the map atlas for public habitats.
+
+This retains the original native Unreal direct-IP multiplayer workflow:
+replicated movement/public state, owner profile synchronization, server-owned
+combat/rewards and persistent AI rivals. Accounts and saves belong to each
+hosting machine. The existing save policy remains configurable globally.
+
+INSPECT THE WORLD
+Tools > Digimon Venom NXT: Open Public World frames the first map. Nearby and
+selected map zones show their real ground/foreground artwork. Focus/select
+another map in the Outliner to inspect it. All 500 registered zones are present;
+preview loading is bounded so the editor does not load all 500 textures at once.
+Use Open Main Menu to play the account/hosting flow.
+
+EXTERNAL WINDOWS BUILD
+From the installed plugin Tools folder in CMD:
+
+  Build_Windows.bat -EngineRoot "C:\Program Files\Epic Games\UE_5.8" -ImportContent
+
+For already completed and verified content whose worlds need repair:
+
+  Build_Windows.bat -EngineRoot "C:\Program Files\Epic Games\UE_5.8" -RepairStartup
+
+Use your actual engine path. Normal imports resume verified saved work.
+-ForceReimport together with -ImportContent explicitly rebuilds all content.
+The build now loads/validates both worlds, native game modes, map zones and
+project defaults before proceeding to the game build and cook.
+
+VALIDATION STATUS
+Portable regression results and the source audit are included in Docs.
+Unreal/MSVC compilation, real editor import and a host-plus-client play test
+have not run in this Linux preparation environment. Follow
+Docs/UNREAL_ACCEPTANCE.md for those remaining engine checks.
