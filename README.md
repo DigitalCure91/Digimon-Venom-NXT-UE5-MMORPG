@@ -1,4 +1,4 @@
-# Digimon-Venom-NXT-UE5-MMORPG# DIGIMON VENOM NXT
+# Digimon-Venom-NXT-UE5-MMORPG
 
 ## Explore. Scan. Digivolve. Compete.
 
