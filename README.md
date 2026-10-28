@@ -1,5 +1,14 @@
 # Digimon-Venom-NXT-UE5-MMORPG
 
+## Building The Packaged Game.
+
+1. First you MUST build the C++ source using "Build_Windows.bat" which is found in plugin tools folder, it WILL fail but that really just means it has successfully built the C++ so dont worry.
+C:\Users\user\Documents\Unreal Projects\Digimon-Venom-NXT-UE5-MMORPG\Plugins\DigimonVenomNXT\Tools\Build_Windows.bat
+
+2.Now its time to Package the game properly using the in editor windows x64 packager, build it for windows in the editor and since part 1 is already done after it packages, the built game WILL successfully open properly
+
+NOTE: if part 1 is not done and you package the game in the editor then the built game will not open, you must first use Build_Windows.bat before packaging in the editor.
+
 ## Explore. Scan. Digivolve. Compete.
 
 **A new MMO Digimon adventure built in Unreal Engine 5, combining a shared MMO world with private story campaigns, partner raising, competitive battles and your own DigiFarm.**
