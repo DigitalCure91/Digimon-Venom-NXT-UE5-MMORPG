@@ -124,9 +124,20 @@ public:
     UPROPERTY(Config, EditAnywhere, BlueprintReadOnly, Category="AI Rivals", meta=(ClampMin="0.5", ClampMax="20.0"))
     float AIRivalSimulationBudgetMilliseconds = 4.0f;
 
-    /** Unique species/variant materializations stop at this capacity; existing ownership is retained. */
-    UPROPERTY(Config, EditAnywhere, BlueprintReadOnly, Category="AI Rivals", meta=(ClampMin="6", ClampMax="5000"))
-    int32 AIRivalMaxCollectionSize = 1536;
+    /** Total owned Digimon per bot, including its active party. Full storage blocks materialization.
+     * Excess legacy reserves are released permanently; active parties are retained. Runtime safety
+     * also limits ownership to 64 per bot and shares a 64,000-companion budget across saved rivals.
+     * Existing INI values above these limits are clamped; configured party slots remain available.
+     */
+    UPROPERTY(Config, EditAnywhere, BlueprintReadOnly, Category="AI Rivals|Retention", meta=(ClampMin="6", ClampMax="64"))
+    int32 AIRivalMaxCollectionSize = 24;
+
+    /** Retain useful scan progress, not a perpetual full discovery archive for every bot.
+     * Runtime limits: 256 per bot and a shared 128,000-record budget across saved rivals.
+     * Duplicate/empty scans are removed; excess scans prefer current spendable progress.
+     */
+    UPROPERTY(Config, EditAnywhere, BlueprintReadOnly, Category="AI Rivals|Retention", meta=(ClampMin="16", ClampMax="256"))
+    int32 AIRivalMaxScanRecords = 128;
 
     /** Rotate the training leader and level-matched party after this many field battles. */
     UPROPERTY(Config, EditAnywhere, BlueprintReadOnly, Category="AI Rivals", meta=(ClampMin="1", ClampMax="100"))

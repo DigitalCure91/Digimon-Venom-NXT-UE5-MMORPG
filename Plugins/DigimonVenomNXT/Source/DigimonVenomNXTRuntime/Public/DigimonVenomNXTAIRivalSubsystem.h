@@ -31,6 +31,11 @@ public:
     /** Server matchmaking view; excludes potentially large collections and scan histories. */
     TArray<FDigimonAIRivalRecord> GetRivalBattleSnapshots() const;
 
+    /** Server-only release of a reserve; active party/leader and live battles are protected.
+     * Removes the owned record and its training history; scan progress is not a creature copy. */
+    UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly, Category="Digimon Venom NXT|AI Rivals")
+    bool ReleaseStoredPartner(const FString& RivalId, FGuid InstanceId);
+
     /** UTC fixed 12-hour window; at most 25 rows per response. Server only. */
     UFUNCTION(BlueprintCallable, Category="Digimon Venom NXT|AI Rivals")
     FDigimonAIRivalActivityPage GetActivityPage(int32 PageIndex=0, int32 PageSize=20);
@@ -64,6 +69,9 @@ public:
     bool SaveForHostConsole();
 
 private:
+#if WITH_DEV_AUTOMATION_TESTS
+    friend class FDigimonRivalMaterializationCapacityTest;
+#endif
     FDigimonAIRivalSaveData SaveData;
     TMap<FString, TWeakObjectPtr<ADigimonVenomNXTAIRivalAvatar>> Avatars;
     float SimulationAccumulator = 0.0f;
@@ -89,6 +97,8 @@ private:
     void BuildSimulationCatalog();
     void RefreshActivityWindow(int64 Now);
     void RecordActivity(FDigimonAIRivalRecord& Rival, const FDigimonAIRivalActivityCounters& Delta);
+    int32 RetentionPopulation() const;
+    void CompactRival(FDigimonAIRivalRecord& Rival);
     void NormalizeRival(FDigimonAIRivalRecord& Rival);
     void StoreParty(FDigimonAIRivalRecord& Rival);
     void SelectParty(FDigimonAIRivalRecord& Rival, bool bRotate=false, FGuid PreferredLeader=FGuid());

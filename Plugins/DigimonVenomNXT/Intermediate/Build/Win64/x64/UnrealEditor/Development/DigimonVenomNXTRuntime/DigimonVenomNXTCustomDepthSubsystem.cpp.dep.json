@@ -1,14 +1,14 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\private\\digimonvenomnxtcustomdepthsubsystem.cpp",
+        "Source": "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\private\\digimonvenomnxtcustomdepthsubsystem.cpp",
         "ProvidedModule": "",
-        "PCH": "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "PCH": "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
         "Includes": [
-            "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\digimonvenomnxtruntime\\definitions.digimonvenomnxtruntime.h",
-            "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\public\\digimonvenomnxtcustomdepthsubsystem.h",
-            "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\intermediate\\build\\win64\\unrealeditor\\inc\\digimonvenomnxtruntime\\uht\\digimonvenomnxtcustomdepthsubsystem.generated.h",
-            "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\public\\digimonvenomnxtcustomdepth.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\digimonvenomnxtruntime\\definitions.digimonvenomnxtruntime.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\public\\digimonvenomnxtcustomdepthsubsystem.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\intermediate\\build\\win64\\unrealeditor\\inc\\digimonvenomnxtruntime\\uht\\digimonvenomnxtcustomdepthsubsystem.generated.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\public\\digimonvenomnxtcustomdepth.h",
             "c:\\program files\\epic games\\ue_5.8\\engine\\source\\runtime\\engine\\public\\engineutils.h",
             "c:\\program files\\epic games\\ue_5.8\\engine\\source\\runtime\\core\\public\\misc\\stringoutputdevice.h"
         ],

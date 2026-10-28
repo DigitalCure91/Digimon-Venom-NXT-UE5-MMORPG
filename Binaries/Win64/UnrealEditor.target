@@ -14,8 +14,8 @@
 	{
 		"MajorVersion": 5,
 		"MinorVersion": 8,
-		"PatchVersion": 3,
-		"Changelist": 58210709,
+		"PatchVersion": 4,
+		"Changelist": 58902052,
 		"CompatibleChangelist": 55116800,
 		"IsLicenseeVersion": 0,
 		"IsPromotedBuild": 0,
@@ -8737,6 +8737,238 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/LightWeightInstancesEditor/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/DLSSMoviePipelineSupport/Binaries/Win64/UnrealEditor-DLSSMoviePipelineSupport.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/DLSSMoviePipelineSupport/Binaries/Win64/UnrealEditor-DLSSMoviePipelineSupport.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/DLSSMoviePipelineSupport/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/DLSS/Binaries/Win64/UnrealEditor-DLSS.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/DLSS/Binaries/Win64/UnrealEditor-DLSS.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/DLSS/Binaries/Win64/UnrealEditor-DLSSBlueprint.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/DLSS/Binaries/Win64/UnrealEditor-DLSSBlueprint.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/DLSS/Binaries/Win64/UnrealEditor-DLSSEditor.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/DLSS/Binaries/Win64/UnrealEditor-DLSSEditor.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/DLSS/Binaries/Win64/UnrealEditor-DLSSUtility.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/DLSS/Binaries/Win64/UnrealEditor-DLSSUtility.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/DLSS/Binaries/Win64/UnrealEditor-NGXD3D11RHI.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/DLSS/Binaries/Win64/UnrealEditor-NGXD3D11RHI.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/DLSS/Binaries/Win64/UnrealEditor-NGXD3D12RHI.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/DLSS/Binaries/Win64/UnrealEditor-NGXD3D12RHI.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/DLSS/Binaries/Win64/UnrealEditor-NGXRHI.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/DLSS/Binaries/Win64/UnrealEditor-NGXRHI.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/DLSS/Binaries/Win64/UnrealEditor-NGXVulkanRHI.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/DLSS/Binaries/Win64/UnrealEditor-NGXVulkanRHI.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/DLSS/Binaries/Win64/UnrealEditor-NGXVulkanRHIPreInit.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/DLSS/Binaries/Win64/UnrealEditor-NGXVulkanRHIPreInit.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/DLSS/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/NIS/Binaries/Win64/UnrealEditor-NISBlueprint.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/NIS/Binaries/Win64/UnrealEditor-NISBlueprint.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/NIS/Binaries/Win64/UnrealEditor-NISCore.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/NIS/Binaries/Win64/UnrealEditor-NISCore.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/NIS/Binaries/Win64/UnrealEditor-NISShaders.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/NIS/Binaries/Win64/UnrealEditor-NISShaders.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/NIS/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/Win64/UnrealEditor-StreamlineBlueprint.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/Win64/UnrealEditor-StreamlineBlueprint.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/Win64/UnrealEditor-StreamlineCore.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/Win64/UnrealEditor-StreamlineCore.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/Win64/UnrealEditor-StreamlineD3D11RHI.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/Win64/UnrealEditor-StreamlineD3D11RHI.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/Win64/UnrealEditor-StreamlineD3D12RHI.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/Win64/UnrealEditor-StreamlineD3D12RHI.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/Win64/UnrealEditor-StreamlineDXGIRHI.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/Win64/UnrealEditor-StreamlineDXGIRHI.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/Win64/UnrealEditor-StreamlineExtension.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/Win64/UnrealEditor-StreamlineExtension.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/Win64/UnrealEditor-StreamlineRHI.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/Win64/UnrealEditor-StreamlineRHI.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/Win64/UnrealEditor-StreamlineShaders.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/Win64/UnrealEditor-StreamlineShaders.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineDLSSG/Binaries/Win64/UnrealEditor-StreamlineDLSSGBlueprint.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineDLSSG/Binaries/Win64/UnrealEditor-StreamlineDLSSGBlueprint.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineDLSSG/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineDeepDVC/Binaries/Win64/UnrealEditor-StreamlineDeepDVCBlueprint.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineDeepDVC/Binaries/Win64/UnrealEditor-StreamlineDeepDVCBlueprint.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineDeepDVC/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineNGXCommon/Binaries/Win64/UnrealEditor-StreamlineNGXCommon.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineNGXCommon/Binaries/Win64/UnrealEditor-StreamlineNGXCommon.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineNGXCommon/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineReflex/Binaries/Win64/UnrealEditor-StreamlineReflexBlueprint.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineReflex/Binaries/Win64/UnrealEditor-StreamlineReflexBlueprint.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineReflex/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -39584,6 +39816,94 @@
 		{
 			"Path": "$(EngineDir)/Plugins/IoStoreInsights/IoStoreInsights.uplugin",
 			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/DLSS/Binaries/ThirdParty/Win64/Development/nvngx_dlss.dll",
+			"Type": "DebugNonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/DLSS/Binaries/ThirdParty/Win64/Development/nvngx_dlssd.dll",
+			"Type": "DebugNonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/DLSS/Binaries/ThirdParty/Win64/nvngx_dlss.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/DLSS/Binaries/ThirdParty/Win64/nvngx_dlssd.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/ThirdParty/Win64/Development/nvngx_deepdvc.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/ThirdParty/Win64/Development/nvngx_dlssg.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/ThirdParty/Win64/Development/sl.common.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/ThirdParty/Win64/Development/sl.deepdvc.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/ThirdParty/Win64/Development/sl.dlss_g.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/ThirdParty/Win64/Development/sl.imgui.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/ThirdParty/Win64/Development/sl.imgui.pdb",
+			"Type": "DebugNonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/ThirdParty/Win64/Development/sl.interposer.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/ThirdParty/Win64/Development/sl.pcl.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/ThirdParty/Win64/Development/sl.reflex.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/ThirdParty/Win64/nvngx_deepdvc.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/ThirdParty/Win64/nvngx_dlssg.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/ThirdParty/Win64/sl.common.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/ThirdParty/Win64/sl.deepdvc.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/ThirdParty/Win64/sl.dlss_g.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/ThirdParty/Win64/sl.interposer.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/ThirdParty/Win64/sl.pcl.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/StreamlineCore/Binaries/ThirdParty/Win64/sl.reflex.dll",
+			"Type": "NonUFS"
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/MassInsights/MassInsights.uplugin",

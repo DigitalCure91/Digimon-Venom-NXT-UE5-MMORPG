@@ -1,0 +1,21 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\private\\tests\\digimonvenomnxtrivalretentiontests.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\digimonvenomnxtruntime\\definitions.digimonvenomnxtruntime.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\public\\digimonvenomnxtrivalretention.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\public\\digimonvenomnxttypes.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\intermediate\\build\\win64\\unrealeditor\\inc\\digimonvenomnxtruntime\\uht\\digimonvenomnxttypes.generated.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\public\\digimonvenomnxtrivalretentioncore.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\public\\digimonvenomnxtairivalsubsystem.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\intermediate\\build\\win64\\unrealeditor\\inc\\digimonvenomnxtruntime\\uht\\digimonvenomnxtairivalsubsystem.generated.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\public\\digimonvenomnxtsettings.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\intermediate\\build\\win64\\unrealeditor\\inc\\digimonvenomnxtruntime\\uht\\digimonvenomnxtsettings.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

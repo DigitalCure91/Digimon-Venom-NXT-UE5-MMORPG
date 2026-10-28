@@ -292,15 +292,27 @@ struct UHT_STATICS
 #endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AIRivalMaxCollectionSize_MetaData[] = {
-		{ "Category", "AI Rivals" },
-		{ "ClampMax", "5000" },
+		{ "Category", "AI Rivals|Retention" },
+		{ "ClampMax", "64" },
 		{ "ClampMin", "6" },
 #if !UE_BUILD_SHIPPING
-		{ "Comment", "/** Unique species/variant materializations stop at this capacity; existing ownership is retained. */" },
+		{ "Comment", "/** Total owned Digimon per bot, including its active party. Full storage blocks materialization.\n     * Excess legacy reserves are released permanently; active parties are retained. Runtime safety\n     * also limits ownership to 64 per bot and shares a 64,000-companion budget across saved rivals.\n     * Existing INI values above these limits are clamped; configured party slots remain available.\n     */" },
 #endif
 		{ "ModuleRelativePath", "Public/DigimonVenomNXTSettings.h" },
 #if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Unique species/variant materializations stop at this capacity; existing ownership is retained." },
+		{ "ToolTip", "Total owned Digimon per bot, including its active party. Full storage blocks materialization.\nExcess legacy reserves are released permanently; active parties are retained. Runtime safety\nalso limits ownership to 64 per bot and shares a 64,000-companion budget across saved rivals.\nExisting INI values above these limits are clamped; configured party slots remain available." },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AIRivalMaxScanRecords_MetaData[] = {
+		{ "Category", "AI Rivals|Retention" },
+		{ "ClampMax", "256" },
+		{ "ClampMin", "16" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "/** Retain useful scan progress, not a perpetual full discovery archive for every bot.\n     * Runtime limits: 256 per bot and a shared 128,000-record budget across saved rivals.\n     * Duplicate/empty scans are removed; excess scans prefer current spendable progress.\n     */" },
+#endif
+		{ "ModuleRelativePath", "Public/DigimonVenomNXTSettings.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Retain useful scan progress, not a perpetual full discovery archive for every bot.\nRuntime limits: 256 per bot and a shared 128,000-record budget across saved rivals.\nDuplicate/empty scans are removed; excess scans prefer current spendable progress." },
 #endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AIRivalTrainingBattlesPerParty_MetaData[] = {
@@ -1082,6 +1094,7 @@ struct UHT_STATICS
 	static const UECodeGen_Private::FIntPropertyParams NewProp_AIRivalActionIntervalSeconds;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_AIRivalSimulationBudgetMilliseconds;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_AIRivalMaxCollectionSize;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_AIRivalMaxScanRecords;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_AIRivalTrainingBattlesPerParty;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_AIRivalTrainingLevelSpan;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_AIRivalMapBalanceReviewActions;
@@ -1247,6 +1260,7 @@ const UECodeGen_Private::FIntPropertyParams UHT_STATICS::NewProp_AIRivalRecordsP
 const UECodeGen_Private::FIntPropertyParams UHT_STATICS::NewProp_AIRivalActionIntervalSeconds = { "AIRivalActionIntervalSeconds", nullptr, (EPropertyFlags)0x0010000000004015, UECodeGen_Private::EPropertyGenFlags::Int, nullptr, nullptr, 1, STRUCT_OFFSET(UDigimonVenomNXTSettings, AIRivalActionIntervalSeconds), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AIRivalActionIntervalSeconds_MetaData), NewProp_AIRivalActionIntervalSeconds_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams UHT_STATICS::NewProp_AIRivalSimulationBudgetMilliseconds = { "AIRivalSimulationBudgetMilliseconds", nullptr, (EPropertyFlags)0x0010000000004015, UECodeGen_Private::EPropertyGenFlags::Float, nullptr, nullptr, 1, STRUCT_OFFSET(UDigimonVenomNXTSettings, AIRivalSimulationBudgetMilliseconds), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AIRivalSimulationBudgetMilliseconds_MetaData), NewProp_AIRivalSimulationBudgetMilliseconds_MetaData) };
 const UECodeGen_Private::FIntPropertyParams UHT_STATICS::NewProp_AIRivalMaxCollectionSize = { "AIRivalMaxCollectionSize", nullptr, (EPropertyFlags)0x0010000000004015, UECodeGen_Private::EPropertyGenFlags::Int, nullptr, nullptr, 1, STRUCT_OFFSET(UDigimonVenomNXTSettings, AIRivalMaxCollectionSize), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AIRivalMaxCollectionSize_MetaData), NewProp_AIRivalMaxCollectionSize_MetaData) };
+const UECodeGen_Private::FIntPropertyParams UHT_STATICS::NewProp_AIRivalMaxScanRecords = { "AIRivalMaxScanRecords", nullptr, (EPropertyFlags)0x0010000000004015, UECodeGen_Private::EPropertyGenFlags::Int, nullptr, nullptr, 1, STRUCT_OFFSET(UDigimonVenomNXTSettings, AIRivalMaxScanRecords), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AIRivalMaxScanRecords_MetaData), NewProp_AIRivalMaxScanRecords_MetaData) };
 const UECodeGen_Private::FIntPropertyParams UHT_STATICS::NewProp_AIRivalTrainingBattlesPerParty = { "AIRivalTrainingBattlesPerParty", nullptr, (EPropertyFlags)0x0010000000004015, UECodeGen_Private::EPropertyGenFlags::Int, nullptr, nullptr, 1, STRUCT_OFFSET(UDigimonVenomNXTSettings, AIRivalTrainingBattlesPerParty), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AIRivalTrainingBattlesPerParty_MetaData), NewProp_AIRivalTrainingBattlesPerParty_MetaData) };
 const UECodeGen_Private::FIntPropertyParams UHT_STATICS::NewProp_AIRivalTrainingLevelSpan = { "AIRivalTrainingLevelSpan", nullptr, (EPropertyFlags)0x0010000000004015, UECodeGen_Private::EPropertyGenFlags::Int, nullptr, nullptr, 1, STRUCT_OFFSET(UDigimonVenomNXTSettings, AIRivalTrainingLevelSpan), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AIRivalTrainingLevelSpan_MetaData), NewProp_AIRivalTrainingLevelSpan_MetaData) };
 const UECodeGen_Private::FIntPropertyParams UHT_STATICS::NewProp_AIRivalMapBalanceReviewActions = { "AIRivalMapBalanceReviewActions", nullptr, (EPropertyFlags)0x0010000000004015, UECodeGen_Private::EPropertyGenFlags::Int, nullptr, nullptr, 1, STRUCT_OFFSET(UDigimonVenomNXTSettings, AIRivalMapBalanceReviewActions), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AIRivalMapBalanceReviewActions_MetaData), NewProp_AIRivalMapBalanceReviewActions_MetaData) };
@@ -1387,6 +1401,7 @@ const UECodeGen_Private::FPropertyParamsBase* const UHT_STATICS::PropPointers[] 
 	(const UECodeGen_Private::FPropertyParamsBase*)&UHT_STATICS::NewProp_AIRivalActionIntervalSeconds,
 	(const UECodeGen_Private::FPropertyParamsBase*)&UHT_STATICS::NewProp_AIRivalSimulationBudgetMilliseconds,
 	(const UECodeGen_Private::FPropertyParamsBase*)&UHT_STATICS::NewProp_AIRivalMaxCollectionSize,
+	(const UECodeGen_Private::FPropertyParamsBase*)&UHT_STATICS::NewProp_AIRivalMaxScanRecords,
 	(const UECodeGen_Private::FPropertyParamsBase*)&UHT_STATICS::NewProp_AIRivalTrainingBattlesPerParty,
 	(const UECodeGen_Private::FPropertyParamsBase*)&UHT_STATICS::NewProp_AIRivalTrainingLevelSpan,
 	(const UECodeGen_Private::FPropertyParamsBase*)&UHT_STATICS::NewProp_AIRivalMapBalanceReviewActions,
@@ -1553,14 +1568,14 @@ UDigimonVenomNXTSettings::~UDigimonVenomNXTSettings() {}
 #ifdef UHT_STATICS
 #error UHT_STATICS already defined
 #endif
-#define UHT_STATICS Z_CompiledInDeferFile_FID_Users_Leen_Documents_Unreal_Projects_DigimonVenomNXT_Plugins_DigimonVenomNXT_Source_DigimonVenomNXTRuntime_Public_DigimonVenomNXTSettings_h__Script_DigimonVenomNXTRuntime_Statics
+#define UHT_STATICS Z_CompiledInDeferFile_FID_Users_Leen_Documents_Unreal_Projects_Digimon_Venom_NXT_UE5_MMORPG_Plugins_DigimonVenomNXT_Source_DigimonVenomNXTRuntime_Public_DigimonVenomNXTSettings_h__Script_DigimonVenomNXTRuntime_Statics
 struct UHT_STATICS
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UDigimonVenomNXTSettings, TEXT("UDigimonVenomNXTSettings"), &Z_Registration_Info_UClass_UDigimonVenomNXTSettings, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDigimonVenomNXTSettings), 2743770623U) },
+		{ Z_Construct_UClass_UDigimonVenomNXTSettings, TEXT("UDigimonVenomNXTSettings"), &Z_Registration_Info_UClass_UDigimonVenomNXTSettings, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDigimonVenomNXTSettings), 1027485103U) },
 	};
 }; // UHT_STATICS 
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Leen_Documents_Unreal_Projects_DigimonVenomNXT_Plugins_DigimonVenomNXT_Source_DigimonVenomNXTRuntime_Public_DigimonVenomNXTSettings_h__Script_DigimonVenomNXTRuntime_caf2cbaf8bd670e25b4b15441ec471335afdd069{
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Leen_Documents_Unreal_Projects_Digimon_Venom_NXT_UE5_MMORPG_Plugins_DigimonVenomNXT_Source_DigimonVenomNXTRuntime_Public_DigimonVenomNXTSettings_h__Script_DigimonVenomNXTRuntime_a5f03081c42b4b191fb92c3c982975ad287487f0{
 	TEXT("/Script/DigimonVenomNXTRuntime"),
 	UHT_STATICS::ClassInfo, UE_ARRAY_COUNT(UHT_STATICS::ClassInfo),
 	nullptr, 0,

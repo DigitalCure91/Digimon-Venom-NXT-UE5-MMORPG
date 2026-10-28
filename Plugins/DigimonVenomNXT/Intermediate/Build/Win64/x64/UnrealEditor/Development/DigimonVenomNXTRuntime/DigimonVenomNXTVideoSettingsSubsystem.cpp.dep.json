@@ -1,16 +1,16 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\private\\digimonvenomnxtvideosettingssubsystem.cpp",
+        "Source": "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\private\\digimonvenomnxtvideosettingssubsystem.cpp",
         "ProvidedModule": "",
-        "PCH": "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "PCH": "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
         "Includes": [
-            "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\digimonvenomnxtruntime\\definitions.digimonvenomnxtruntime.h",
-            "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\public\\digimonvenomnxtvideosettingssubsystem.h",
-            "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\public\\digimonvenomnxtvideopolicycore.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\digimonvenomnxtruntime\\definitions.digimonvenomnxtruntime.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\public\\digimonvenomnxtvideosettingssubsystem.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\public\\digimonvenomnxtvideopolicycore.h",
             "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.44.35207\\include\\cmath",
-            "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\intermediate\\build\\win64\\unrealeditor\\inc\\digimonvenomnxtruntime\\uht\\digimonvenomnxtvideosettingssubsystem.generated.h",
-            "c:\\users\\leen\\documents\\unreal projects\\digimonvenomnxt\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\public\\digimonvenomnxtcustomdepth.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\intermediate\\build\\win64\\unrealeditor\\inc\\digimonvenomnxtruntime\\uht\\digimonvenomnxtvideosettingssubsystem.generated.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\public\\digimonvenomnxtcustomdepth.h",
             "c:\\program files\\epic games\\ue_5.8\\engine\\source\\runtime\\engine\\public\\dynamicresolutionstate.h",
             "c:\\program files\\epic games\\ue_5.8\\engine\\source\\runtime\\renderer\\public\\temporalupscaler.h",
             "c:\\program files\\epic games\\ue_5.8\\engine\\source\\runtime\\renderer\\public\\screenpass.h",

@@ -1,0 +1,28 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\private\\digimonvenomnxtrivalpersistence.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\digimonvenomnxtruntime\\definitions.digimonvenomnxtruntime.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\public\\digimonvenomnxtrivalpersistence.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\public\\digimonvenomnxttypes.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\intermediate\\build\\win64\\unrealeditor\\inc\\digimonvenomnxtruntime\\uht\\digimonvenomnxttypes.generated.h",
+            "c:\\users\\leen\\documents\\unreal projects\\digimon-venom-nxt-ue5-mmorpg\\plugins\\digimonvenomnxt\\source\\digimonvenomnxtruntime\\public\\digimonvenomnxtrivaljsonstreamcore.h",
+            "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.44.35207\\include\\string",
+            "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.44.35207\\include\\xstring",
+            "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.44.35207\\include\\__msvc_sanitizer_annotate_container.hpp",
+            "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.44.35207\\include\\__msvc_string_view.hpp",
+            "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.44.35207\\include\\xpolymorphic_allocator.h",
+            "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.44.35207\\include\\cctype",
+            "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.44.35207\\include\\vector",
+            "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.44.35207\\include\\__msvc_bit_utils.hpp",
+            "c:\\program files\\epic games\\ue_5.8\\engine\\source\\runtime\\jsonutilities\\public\\jsonobjectconverter.h",
+            "c:\\program files\\epic games\\ue_5.8\\engine\\source\\runtime\\jsonutilities\\public\\jsonobjectwrapper.h",
+            "c:\\program files\\epic games\\ue_5.8\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\jsonutilities\\uht\\jsonobjectwrapper.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

@@ -9,6 +9,8 @@
 #include "DigimonVenomNXTPlayerState.h"
 #include "DigimonVenomNXTRankedSubsystem.h"
 #include "DigimonVenomNXTRivalRules.h"
+#include "DigimonVenomNXTRivalRetention.h"
+#include "DigimonVenomNXTRivalPersistence.h"
 #include "DigimonVenomNXTRivalTrainingCore.h"
 #include "DigimonVenomNXTPlayerController.h"
 #include "DigimonVenomNXTBattleActor.h"
@@ -22,11 +24,6 @@
 #include "Engine/GameInstance.h"
 #include "Engine/World.h"
 #include "GameFramework/PlayerController.h"
-#include "JsonObjectConverter.h"
-#include "Dom/JsonObject.h"
-#include "Serialization/JsonReader.h"
-#include "Serialization/JsonSerializer.h"
-#include "Misc/FileHelper.h"
 #include "Misc/Paths.h"
 #include "HAL/FileManager.h"
 #include "HAL/PlatformTime.h"
@@ -51,6 +48,11 @@ void UDigimonVenomNXTAIRivalSubsystem::OnWorldBeginPlay(UWorld& InWorld)
     Super::OnWorldBeginPlay(InWorld);
     if (!HasServerAuthority() || !GetData()) return;
     BuildSimulationCatalog();
+    if (StarterSpecies.IsEmpty())
+    {
+        UE_LOG(LogDigimonRivals, Error, TEXT("Rival simulation disabled: species registry is unavailable. Existing saves are preserved without cleanup."));
+        return;
+    }
     if (!Load()) return;
     RefreshActivityWindow(FDateTime::UtcNow().ToUnixTimestamp());
     EnsurePopulation();
@@ -122,36 +124,47 @@ FString UDigimonVenomNXTAIRivalSubsystem::SavePath() const
     return FPaths::Combine(FPaths::ProjectSavedDir(), TEXT("DigimonVenomNXT"), TEXT("AIRivals.json"));
 }
 
+int32 UDigimonVenomNXTAIRivalSubsystem::RetentionPopulation() const
+{
+    // Paused rivals still occupy disk/memory. Include them and any configured new population.
+    return FMath::Max(SaveData.Rivals.Num(), FMath::Clamp(GetDefault<UDigimonVenomNXTSettings>()->MaxPersistentAIRivals, 1, 5000));
+}
+
+void UDigimonVenomNXTAIRivalSubsystem::CompactRival(FDigimonAIRivalRecord& Rival)
+{
+    if (DigimonVenomNXTRivalRetention::Prune(Rival, *GetDefault<UDigimonVenomNXTSettings>(), GetData(), RetentionPopulation()).bChanged)
+        bDirty = true;
+}
+
 bool UDigimonVenomNXTAIRivalSubsystem::Load()
 {
     const FString Path = SavePath();
     bool bUnsupportedSchema = false;
-    auto Read = [this, &bUnsupportedSchema](const FString& Source)
+    FString Error;
+    int64 ReleasedPartners = 0;
+    auto Read = [this, &bUnsupportedSchema, &Error, &ReleasedPartners](const FString& Source)
     {
-        FString Text;
-        FDigimonAIRivalSaveData Candidate;
-        if (!FFileHelper::LoadFileToString(Text, *Source)) return false;
-        TSharedPtr<FJsonObject> Root;
-        if (!FJsonSerializer::Deserialize(TJsonReaderFactory<>::Create(Text), Root) || !Root.IsValid()) return false;
-        const TArray<TSharedPtr<FJsonValue>>* Records = nullptr;
-        if (!Root->TryGetArrayField(TEXT("rivals"), Records) && !Root->TryGetArrayField(TEXT("Rivals"), Records)) return false;
-        if (!FJsonObjectConverter::JsonObjectStringToUStruct(Text, &Candidate, 0, 0)) return false;
-        if (Candidate.SchemaVersion > 3) { bUnsupportedSchema = true; return false; }
-        TSet<FString> Ids;
-        for (const FDigimonAIRivalRecord& Rival : Candidate.Rivals)
-        {
-            if (Rival.RivalId.IsEmpty() || Ids.Contains(Rival.RivalId)) return false;
-            Ids.Add(Rival.RivalId);
-        }
-        SaveData = MoveTemp(Candidate);
-        return true;
+        ReleasedPartners = 0;
+        return DigimonVenomNXTRivalPersistence::Read(Source, SaveData,
+            [this, &ReleasedPartners](FDigimonAIRivalRecord& Rival, int32 TotalRivals)
+            {
+                const UDigimonVenomNXTSettings* Settings = GetDefault<UDigimonVenomNXTSettings>();
+                const auto Result = DigimonVenomNXTRivalRetention::Prune(Rival, *Settings, GetData(),
+                    FMath::Max(TotalRivals, FMath::Clamp(Settings->MaxPersistentAIRivals, 1, 5000)));
+                ReleasedPartners += Result.ReleasedPartners;
+            }, Error, bUnsupportedSchema);
     };
-    if (!IFileManager::Get().FileExists(*Path))
+    IFileManager& Files = IFileManager::Get();
+    if (!Files.FileExists(*Path))
     {
-        if (IFileManager::Get().FileExists(*(Path + TEXT(".bak"))) && !Read(Path + TEXT(".bak")))
+        if (Files.FileExists(*(Path + TEXT(".bak"))))
         {
-            UE_LOG(LogDigimonRivals, Error, TEXT("Rival backup could not be loaded. Simulation disabled; save files preserved."));
-            return false;
+            if (!Read(Path + TEXT(".bak")))
+            {
+                UE_LOG(LogDigimonRivals, Error, TEXT("Rival backup could not be loaded: %s. Simulation disabled; save files preserved."), *Error);
+                return false;
+            }
+            bRecoveredFromBackup = true;
         }
     }
     else if (!Read(Path))
@@ -161,15 +174,19 @@ bool UDigimonVenomNXTAIRivalSubsystem::Load()
             UE_LOG(LogDigimonRivals, Error, TEXT("Rival save belongs to a newer framework version; simulation disabled without modifying it."));
             return false;
         }
+        UE_LOG(LogDigimonRivals, Warning, TEXT("Primary rival checkpoint rejected: %s"), *Error);
         if (!Read(Path + TEXT(".bak")))
         {
-            UE_LOG(LogDigimonRivals, Error, TEXT("Rival save and backup could not be loaded. Simulation disabled; save files preserved."));
+            UE_LOG(LogDigimonRivals, Error, TEXT("Rival save and backup could not be loaded: %s. Simulation disabled; save files preserved."), *Error);
             return false;
         }
-        // Preserve the bad source for diagnosis before the recovered database is saved.
         bRecoveredFromBackup = true;
-        if (IFileManager::Get().Copy(*(Path + TEXT(".corrupt")), *Path, true, true) != COPY_OK)
-            UE_LOG(LogDigimonRivals, Warning, TEXT("Could not archive corrupt primary; retaining valid backup during recovery."));
+        // A single bounded diagnostic copy is enough. Never create a new gigabyte archive.
+        if (Files.FileSize(*Path) <= DigimonVenomNXTRivalPersistence::MaxCheckpointBytes)
+        {
+            if (Files.Copy(*(Path + TEXT(".corrupt")), *Path, true, true) != COPY_OK)
+                UE_LOG(LogDigimonRivals, Warning, TEXT("Could not archive corrupt primary; retaining valid backup during recovery."));
+        }
         UE_LOG(LogDigimonRivals, Warning, TEXT("Recovered persistent rivals from the last complete backup."));
     }
     SaveData.SchemaVersion = 3;
@@ -177,6 +194,10 @@ bool UDigimonVenomNXTAIRivalSubsystem::Load()
     for (FDigimonAIRivalRecord& Rival : SaveData.Rivals) NormalizeRival(Rival);
     bLoaded = true;
     bDirty = true;
+    const UDigimonVenomNXTSettings* Settings = GetDefault<UDigimonVenomNXTSettings>();
+    UE_LOG(LogDigimonRivals, Display, TEXT("Rival retention: %d stored tamers, %d Digimon per bot, %d scan records per bot; released %lld surplus/invalid/duplicate records during load."),
+        SaveData.Rivals.Num(), DigimonVenomNXTRivalRetention::CollectionLimit(Settings->AIRivalMaxCollectionSize, Settings->MaxPartySize, RetentionPopulation()),
+        DigimonVenomNXTRivalRetention::ScanLimit(Settings->AIRivalMaxScanRecords, RetentionPopulation()), static_cast<long long>(ReleasedPartners));
     return true;
 }
 
@@ -184,32 +205,51 @@ bool UDigimonVenomNXTAIRivalSubsystem::Save(bool bExplicitAdminSave)
 {
     if (!bLoaded || !GetWorld() || GetWorld()->GetNetMode() == NM_Client) return false;
     if (!bExplicitAdminSave && !GetDefault<UDigimonVenomNXTSettings>()->bEnableGlobalAutosaves) return true;
+    // Include paused rivals and live-battle records; compaction preserves their active party.
+    for (FDigimonAIRivalRecord& Rival : SaveData.Rivals) CompactRival(Rival);
     if (!bDirty) return true;
     const FString Path = SavePath();
+    const FString Temporary = Path + TEXT(".tmp");
+    const FString Backup = Path + TEXT(".bak");
+    const FString BackupTemporary = Backup + TEXT(".tmp");
     IFileManager& Files = IFileManager::Get();
     Files.MakeDirectory(*FPaths::GetPath(Path), true);
     SaveData.LastSavedUnix = FDateTime::UtcNow().ToUnixTimestamp();
-    FString Text;
-    if (!FJsonObjectConverter::UStructToJsonObjectString(SaveData, Text) ||
-        !FFileHelper::SaveStringToFile(Text, *(Path + TEXT(".tmp")), FFileHelper::EEncodingOptions::ForceUTF8WithoutBOM))
+    FString Error;
+    if (!DigimonVenomNXTRivalPersistence::WriteTemporary(Temporary, SaveData, Error))
     {
-        UE_LOG(LogDigimonRivals, Error, TEXT("Could not write rival checkpoint; previous save retained."));
+        UE_LOG(LogDigimonRivals, Error, TEXT("Could not write rival checkpoint: %s. Previous save retained."), *Error);
+        Files.Delete(*Temporary, false, true);
         return false;
     }
-    // Same-directory rename publishes a complete JSON file. Backup remains available if
-    // the host terminates during replacement; a truncated temp file is never loaded.
-    if (!bRecoveredFromBackup && Files.FileExists(*Path) && Files.Copy(*(Path + TEXT(".bak")), *Path, true, true) != COPY_OK)
+    // Rotate just one backup through its own temporary file. During first legacy
+    // compaction/recovery seed it from the completed compact checkpoint, so a 1GB
+    // previous database does not remain indefinitely as a second archive.
+    const bool bSeedCompactBackup = bRecoveredFromBackup || !Files.FileExists(*Path) ||
+        Files.FileSize(*Path) > DigimonVenomNXTRivalPersistence::MaxCheckpointBytes;
+    const FString BackupSource = bSeedCompactBackup ? Temporary : Path;
+    if (Files.Copy(*BackupTemporary, *BackupSource, true, true) != COPY_OK ||
+        !DigimonVenomNXTAtomicFile::ReplaceFromTemporary(Backup, BackupTemporary))
     {
         UE_LOG(LogDigimonRivals, Error, TEXT("Could not back up rival checkpoint; previous save retained."));
+        Files.Delete(*BackupTemporary, false, true);
+        Files.Delete(*Temporary, false, true);
         return false;
     }
-    if (!DigimonVenomNXTAtomicFile::ReplaceFromTemporary(Path, Path + TEXT(".tmp")))
+    if (!DigimonVenomNXTAtomicFile::ReplaceFromTemporary(Path, Temporary))
     {
         UE_LOG(LogDigimonRivals, Error, TEXT("Could not publish rival checkpoint; backup retained."));
+        Files.Delete(*Temporary, false, true);
         return false;
     }
+    // Only discard an oversized diagnostic artifact after both valid checkpoints exist.
+    const FString Corrupt = Path + TEXT(".corrupt");
+    if (Files.FileSize(*Corrupt) > DigimonVenomNXTRivalPersistence::MaxCheckpointBytes && !Files.Delete(*Corrupt, false, true))
+        UE_LOG(LogDigimonRivals, Warning, TEXT("Could not remove oversized obsolete rival diagnostic archive."));
     bDirty = false;
     bRecoveredFromBackup = false;
+    UE_LOG(LogDigimonRivals, Display, TEXT("Saved %d persistent rivals in %.2f MiB (bounded, streamed checkpoint)."),
+        SaveData.Rivals.Num(), static_cast<double>(Files.FileSize(*Path)) / (1024.0 * 1024.0));
     return true;
 }
 
@@ -221,6 +261,17 @@ bool UDigimonVenomNXTAIRivalSubsystem::SaveForHostConsole()
     UDigimonVenomNXTServerConsoleSubsystem* Console = GI ? GI->GetSubsystem<UDigimonVenomNXTServerConsoleSubsystem>() : nullptr;
     if (!Console || !Console->CanAccess(GI->GetFirstLocalPlayerController())) return false;
     return Save(true);
+}
+
+bool UDigimonVenomNXTAIRivalSubsystem::ReleaseStoredPartner(const FString& RivalId, FGuid InstanceId)
+{
+    if (!bLoaded || !HasServerAuthority() || IsRivalInLiveBattle(RivalId)) return false;
+    FDigimonAIRivalRecord* Rival = FindRivalMutable(RivalId);
+    if (!Rival || !DigimonVenomNXTRivalRetention::Release(*Rival, InstanceId,
+        *GetDefault<UDigimonVenomNXTSettings>(), GetData(), RetentionPopulation())) return false;
+    Rival->CurrentActivity = TEXT("Released a stored Digimon; storage slot available");
+    bDirty = true;
+    return true;
 }
 
 void UDigimonVenomNXTAIRivalSubsystem::RefreshActivityWindow(int64 Now)
@@ -301,6 +352,7 @@ FDigimonAIRivalRecord UDigimonVenomNXTAIRivalSubsystem::MakeRival(int32 Index) c
 
 void UDigimonVenomNXTAIRivalSubsystem::NormalizeRival(FDigimonAIRivalRecord& Rival)
 {
+    CompactRival(Rival); // Bound legacy ownership before migration/building combat stats.
     // Existing Partners are the authoritative legacy records. Merge by GUID rather than
     // recreating them: XP, moves, training, variants and scans survive this migration.
     for (FDigimonOwnedPartner& Partner : Rival.Partners)
@@ -345,12 +397,13 @@ void UDigimonVenomNXTAIRivalSubsystem::NormalizeRival(FDigimonAIRivalRecord& Riv
     SelectParty(Rival);
     if (Rival.Partners.IsEmpty())
     {
-        // Early framework saves could contain the placeholder rookie_001 before data
-        // was available. Retain those records, but provide one real starter to resume.
+        // Cleanup removes unusable early placeholder records. If none of the retained
+        // creatures can form a party, provide one real starter to resume.
         const FDigimonOwnedPartner Recovered = MakePartnerForRival(FMath::Max(1, Rival.TamerLevel));
         if (Recovered.IsValid()) { Rival.Collection.Add(Recovered); SelectParty(Rival); }
     }
     if (Rival.ExplorationTargetLevel <= 0) Rival.ExplorationTargetLevel = Rival.TamerLevel;
+    CompactRival(Rival);
 }
 
 void UDigimonVenomNXTAIRivalSubsystem::EnsurePopulation()
@@ -472,6 +525,7 @@ void UDigimonVenomNXTAIRivalSubsystem::StoreParty(FDigimonAIRivalRecord& Rival)
         if (Owned) *Owned = Partner;
         else if (Partner.IsValid()) Rival.Collection.Add(Partner);
     }
+    CompactRival(Rival);
     if (ADigimonVenomNXTAIRivalAvatar* Avatar = Avatars.FindRef(Rival.RivalId).Get())
         Avatar->RefreshLeaderFollower(Rival.Partners.IsEmpty() ? FDigimonOwnedPartner() : Rival.Partners[0]);
 }
@@ -628,7 +682,9 @@ bool UDigimonVenomNXTAIRivalSubsystem::HealPartyIfNeeded(FDigimonAIRivalRecord& 
 bool UDigimonVenomNXTAIRivalSubsystem::TryMaterialize(FDigimonAIRivalRecord& Rival)
 {
     const UDigimonVenomNXTSettings* Settings = GetDefault<UDigimonVenomNXTSettings>();
-    if (Rival.Collection.Num() >= FMath::Max(Settings->MaxPartySize, Settings->AIRivalMaxCollectionSize)) return false;
+    // Check BEFORE consuming scan, allocating a GUID, or constructing a new partner.
+    if (Rival.Collection.Num() >= DigimonVenomNXTRivalRetention::CollectionLimit(
+        Settings->AIRivalMaxCollectionSize, Settings->MaxPartySize, RetentionPopulation())) return false;
     for (FDigimonScanRecord& Scan : Rival.Scans)
     {
         const auto Result = DigimonVenomNXTScanCore::Materialize(Scan.Percent, Settings->MaterializeRequirementPercent,
@@ -930,6 +986,8 @@ void UDigimonVenomNXTAIRivalSubsystem::SimulateWildBattle(FDigimonAIRivalRecord&
 
 void UDigimonVenomNXTAIRivalSubsystem::SimulateRival(FDigimonAIRivalRecord& Rival)
 {
+    // Memory stays bounded even when global autosaving is disabled for days.
+    CompactRival(Rival);
     if (Rival.Partners.IsEmpty()) { NormalizeRival(Rival); if (Rival.Partners.IsEmpty()) return; }
     const int64 Now = FDateTime::UtcNow().ToUnixTimestamp();
     const UDigimonVenomNXTSettings* Settings = GetDefault<UDigimonVenomNXTSettings>();

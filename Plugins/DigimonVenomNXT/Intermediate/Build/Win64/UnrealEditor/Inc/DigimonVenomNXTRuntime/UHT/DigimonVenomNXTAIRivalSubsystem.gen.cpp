@@ -13,6 +13,7 @@ static_assert(!UE_WITH_CONSTINIT_UOBJECT, "This generated code can only be compi
 void EmptyLinkFunctionForGeneratedCodeDigimonVenomNXTAIRivalSubsystem() {}
 
 // ********** Begin Cross Module References ********************************************************
+COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FGuid(ETypeConstructPhase);
 ENGINE_API UClass* Z_Construct_UClass_UTickableWorldSubsystem(ETypeConstructPhase);
 // ********** End Cross Module References **********************************************************
 
@@ -397,6 +398,82 @@ DEFINE_FUNCTION(UDigimonVenomNXTAIRivalSubsystem::execGetRivalsOnMap)
 }
 // ********** End Class UDigimonVenomNXTAIRivalSubsystem Function GetRivalsOnMap *******************
 
+// ********** Begin Class UDigimonVenomNXTAIRivalSubsystem Function ReleaseStoredPartner ***********
+#ifdef UHT_STATICS
+#error UHT_STATICS already defined
+#endif
+#define UHT_STATICS Z_Construct_UFunction_UDigimonVenomNXTAIRivalSubsystem_ReleaseStoredPartner_Statics
+struct UHT_STATICS
+{
+	struct DigimonVenomNXTAIRivalSubsystem_eventReleaseStoredPartner_Parms
+	{
+		FString RivalId;
+		FGuid InstanceId;
+		bool ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Type_MetaData[] = {
+		{ "Category", "Digimon Venom NXT|AI Rivals" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "/** Server-only release of a reserve; active party/leader and live battles are protected.\n     * Removes the owned record and its training history; scan progress is not a creature copy. */" },
+#endif
+		{ "ModuleRelativePath", "Public/DigimonVenomNXTAIRivalSubsystem.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Server-only release of a reserve; active party/leader and live battles are protected.\nRemoves the owned record and its training history; scan progress is not a creature copy." },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RivalId_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif // WITH_METADATA
+
+// ********** Begin Function ReleaseStoredPartner constinit property declarations ******************
+	static const UECodeGen_Private::FStrPropertyParams NewProp_RivalId;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_InstanceId;
+	static void NewProp_ReturnValue_SetBit(void* Obj)
+	{
+		((DigimonVenomNXTAIRivalSubsystem_eventReleaseStoredPartner_Parms*)Obj)->ReturnValue = 1;
+	}
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+// ********** End Function ReleaseStoredPartner constinit property declarations ********************
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+
+// ********** Begin Function ReleaseStoredPartner Property Definitions *****************************
+const UECodeGen_Private::FStrPropertyParams UHT_STATICS::NewProp_RivalId = { "RivalId", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Str, nullptr, nullptr, 1, STRUCT_OFFSET(DigimonVenomNXTAIRivalSubsystem_eventReleaseStoredPartner_Parms, RivalId), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RivalId_MetaData), NewProp_RivalId_MetaData) };
+const UECodeGen_Private::FStructPropertyParams UHT_STATICS::NewProp_InstanceId = { "InstanceId", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, nullptr, nullptr, 1, STRUCT_OFFSET(DigimonVenomNXTAIRivalSubsystem_eventReleaseStoredPartner_Parms, InstanceId), Z_Construct_UScriptStruct_FGuid, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FBoolPropertyParams UHT_STATICS::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, nullptr, nullptr, 1, sizeof(bool), sizeof(DigimonVenomNXTAIRivalSubsystem_eventReleaseStoredPartner_Parms), &UHT_STATICS::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const UHT_STATICS::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&UHT_STATICS::NewProp_RivalId,
+	(const UECodeGen_Private::FPropertyParamsBase*)&UHT_STATICS::NewProp_InstanceId,
+	(const UECodeGen_Private::FPropertyParamsBase*)&UHT_STATICS::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(UHT_STATICS::PropPointers) < 2048);
+// ********** End Function ReleaseStoredPartner Property Definitions *******************************
+const UECodeGen_Private::FFunctionParams UHT_STATICS::FuncParams = { { (FTypeConstructFunc*)Z_Construct_UClass_UDigimonVenomNXTAIRivalSubsystem, nullptr, "ReleaseStoredPartner", UHT_STATICS::PropPointers, UE_ARRAY_COUNT(UHT_STATICS::PropPointers), DataSizeOf<UHT_STATICS::DigimonVenomNXTAIRivalSubsystem_eventReleaseStoredPartner_Parms>(), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04820405, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(UHT_STATICS::Type_MetaData), UHT_STATICS::Type_MetaData)},  };
+static_assert(sizeof(UHT_STATICS::DigimonVenomNXTAIRivalSubsystem_eventReleaseStoredPartner_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UDigimonVenomNXTAIRivalSubsystem_ReleaseStoredPartner(ETypeConstructPhase Phase)
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, UHT_STATICS::FuncParams);
+	}
+	return ReturnFunction;
+}
+#undef UHT_STATICS
+DEFINE_FUNCTION(UDigimonVenomNXTAIRivalSubsystem::execReleaseStoredPartner)
+{
+	P_GET_PROPERTY(FStrProperty,Z_Param_RivalId);
+	P_GET_STRUCT(FGuid,Z_Param_InstanceId);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(bool*)Z_Param__Result=P_THIS->ReleaseStoredPartner(Z_Param_RivalId,Z_Param_InstanceId);
+	P_NATIVE_END;
+}
+// ********** End Class UDigimonVenomNXTAIRivalSubsystem Function ReleaseStoredPartner *************
+
 // ********** Begin Class UDigimonVenomNXTAIRivalSubsystem *****************************************
 #ifdef UHT_STATICS
 #error UHT_STATICS already defined
@@ -427,6 +504,7 @@ struct UHT_STATICS
 		{ .NameUTF8 = UTF8TEXT("GetAllRivals"), .Pointer = &UDigimonVenomNXTAIRivalSubsystem::execGetAllRivals },
 		{ .NameUTF8 = UTF8TEXT("GetRival"), .Pointer = &UDigimonVenomNXTAIRivalSubsystem::execGetRival },
 		{ .NameUTF8 = UTF8TEXT("GetRivalsOnMap"), .Pointer = &UDigimonVenomNXTAIRivalSubsystem::execGetRivalsOnMap },
+		{ .NameUTF8 = UTF8TEXT("ReleaseStoredPartner"), .Pointer = &UDigimonVenomNXTAIRivalSubsystem::execReleaseStoredPartner },
 	};
 	static FTypeConstructFunc* DependentSingletons[];
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -436,6 +514,7 @@ struct UHT_STATICS
 		{ &Z_Construct_UFunction_UDigimonVenomNXTAIRivalSubsystem_GetAllRivals, "GetAllRivals" }, // efe45c2dd9946471925b6709300edf3c0ad9b057
 		{ &Z_Construct_UFunction_UDigimonVenomNXTAIRivalSubsystem_GetRival, "GetRival" }, // b8003111bfc507ae5c0d9db468fab45928313a03
 		{ &Z_Construct_UFunction_UDigimonVenomNXTAIRivalSubsystem_GetRivalsOnMap, "GetRivalsOnMap" }, // 94b31c45e3fc0bd8821d66d3022e00798ffa5825
+		{ &Z_Construct_UFunction_UDigimonVenomNXTAIRivalSubsystem_ReleaseStoredPartner, "ReleaseStoredPartner" }, // 9e52fb0520a1a96282947df2fe37328083612d29
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -511,14 +590,14 @@ UDigimonVenomNXTAIRivalSubsystem::~UDigimonVenomNXTAIRivalSubsystem() {}
 #ifdef UHT_STATICS
 #error UHT_STATICS already defined
 #endif
-#define UHT_STATICS Z_CompiledInDeferFile_FID_Users_Leen_Documents_Unreal_Projects_DigimonVenomNXT_Plugins_DigimonVenomNXT_Source_DigimonVenomNXTRuntime_Public_DigimonVenomNXTAIRivalSubsystem_h__Script_DigimonVenomNXTRuntime_Statics
+#define UHT_STATICS Z_CompiledInDeferFile_FID_Users_Leen_Documents_Unreal_Projects_Digimon_Venom_NXT_UE5_MMORPG_Plugins_DigimonVenomNXT_Source_DigimonVenomNXTRuntime_Public_DigimonVenomNXTAIRivalSubsystem_h__Script_DigimonVenomNXTRuntime_Statics
 struct UHT_STATICS
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UDigimonVenomNXTAIRivalSubsystem, TEXT("UDigimonVenomNXTAIRivalSubsystem"), &Z_Registration_Info_UClass_UDigimonVenomNXTAIRivalSubsystem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDigimonVenomNXTAIRivalSubsystem), 2025580702U) },
+		{ Z_Construct_UClass_UDigimonVenomNXTAIRivalSubsystem, TEXT("UDigimonVenomNXTAIRivalSubsystem"), &Z_Registration_Info_UClass_UDigimonVenomNXTAIRivalSubsystem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDigimonVenomNXTAIRivalSubsystem), 139856014U) },
 	};
 }; // UHT_STATICS 
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Leen_Documents_Unreal_Projects_DigimonVenomNXT_Plugins_DigimonVenomNXT_Source_DigimonVenomNXTRuntime_Public_DigimonVenomNXTAIRivalSubsystem_h__Script_DigimonVenomNXTRuntime_72b3434b627fe36ec419e785f16bb26f4c0daed3{
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Leen_Documents_Unreal_Projects_Digimon_Venom_NXT_UE5_MMORPG_Plugins_DigimonVenomNXT_Source_DigimonVenomNXTRuntime_Public_DigimonVenomNXTAIRivalSubsystem_h__Script_DigimonVenomNXTRuntime_a274c444a537228112ee3fd57edcac7a41188509{
 	TEXT("/Script/DigimonVenomNXTRuntime"),
 	UHT_STATICS::ClassInfo, UE_ARRAY_COUNT(UHT_STATICS::ClassInfo),
 	nullptr, 0,
